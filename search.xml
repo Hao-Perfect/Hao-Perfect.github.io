@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>测试</title>
+    <url>/2020/02/16/%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<br>
+&emsp;&emsp; 写作缘由:【发布博文测试】
+
+<p><strong>说明</strong></p>
+<ul>
+<li>本文基于xx网站，通过github page 与 hoxe 学习建站</li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+        <tag>爬虫</tag>
+        <tag>c++</tag>
+        <tag>AI</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello</title>
+    <url>/2020/02/16/hello-world/</url>
+    <content><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;欢迎来到<a>Hao_Perfect</a>的个人空间！本空间用于记录自己的学习踩坑的一些经历以及学习心得。<br>#<br>&nbsp;&nbsp;电子信息工程专业毕业，算是半吊子的码农，个人对于计算机相关得知识都十分感兴趣，无奈时间就是那么多，最后造成很多东西都是一知半解。同时经历了几次面试，发现自己很多基础知识不扎实，当<strong>HR</strong>问到相关项目经历的一些细节，很多知识已经忘记。<br>为了改变这种情况，随学习建站记录自己的学习情况。曾经在博客园记录过一些踩坑经历，但是自己很多时候比较懒，就只在本地文本记录。遂学习Github page搭建个人的主页，希望自己能坚持下去。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+</search>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hao-Perfect&#39;s Blog</title>
+  
+  <subtitle>欢迎来到小豪的空间</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://hao-perfect.github.io/"/>
+  <updated>2020-02-16T01:59:22.574Z</updated>
+  <id>http://hao-perfect.github.io/</id>
+  
+  <author>
+    <name>Hao_Perfect</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试</title>
+    <link href="http://hao-perfect.github.io/2020/02/16/%E6%B5%8B%E8%AF%95/"/>
+    <id>http://hao-perfect.github.io/2020/02/16/%E6%B5%8B%E8%AF%95/</id>
+    <published>2020-02-15T21:18:04.000Z</published>
+    <updated>2020-02-16T01:59:22.574Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;br&gt;
+&amp;emsp;&amp;emsp; 写作缘由:【发布博文测试】
+
+&lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本文基于xx网站，通过github page 与 hoxe
+        
+      
+    
+    </summary>
+    
+    
+      <category term="测试" scheme="http://Hao-Perfect.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="测试" scheme="http://Hao-Perfect.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="爬虫" scheme="http://Hao-Perfect.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="c++" scheme="http://Hao-Perfect.github.io/tags/c/"/>
+    
+      <category term="AI" scheme="http://Hao-Perfect.github.io/tags/AI/"/>
+    
+      <category term="深度学习" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello</title>
+    <link href="http://hao-perfect.github.io/2020/02/16/hello-world/"/>
+    <id>http://hao-perfect.github.io/2020/02/16/hello-world/</id>
+    <published>2020-02-15T18:44:43.205Z</published>
+    <updated>2020-02-16T01:55:55.260Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;欢迎来到&lt;a&gt;Hao_Perfect&lt;/a&gt;的个人空间！本空间用于记录自己的学习踩坑的一些经历以及学习心得。&lt;br&gt;#&lt;br&gt;&amp;nbsp;&amp;nbsp;电子信息工程专业毕业，算是半吊子的码农，个人对于计算机相关得知识都十分感兴趣
+        
+      
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://Hao-Perfect.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+</feed>
