@@ -3,17 +3,16 @@
   <entry>
     <title>采坑之GitHub Page改成博客</title>
     <url>/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h2 id="采坑之GitHub-Page改成博客"><a href="#采坑之GitHub-Page改成博客" class="headerlink" title="采坑之GitHub Page改成博客"></a>采坑之GitHub Page改成博客</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>渴望掌握各种技术的娃子，应该都有做技术笔记的经历，笔者大学期间做过不少小项目，也自己玩弄了一些好玩的东西，虽然自己也有本地做一些笔记的经验，但是硬盘出错导致全军覆没，再加上记忆还是比不过时间的洗刷。临近毕业，被面试的技术dalao怼的不敢说话，列举自己的项目经历又空口无凭。最后还是想自己在GitHub留下一点痕迹，以便之后更加自信的打工<del>随开始学习怎么把GitHub Page改成博客，记录自己的学习</del></p>
+    <content><![CDATA[<h2 id="采坑之GitHub-Page改成博客"><a href="#采坑之GitHub-Page改成博客" class="headerlink" title="采坑之GitHub Page改成博客"></a>采坑之GitHub Page改成博客</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>渴望掌握各种技术的娃子，应该都有做技术笔记的经历，笔者大学期间做过不少小项目，也自己玩弄了一些好玩的东西，虽然自己也有本地做一些笔记的经验，但是硬盘出错导致全军覆没，再加上记忆还是比不过时间的洗刷。临近毕业，被面试的技术dalao怼的不敢说话，列举自己的项目经历又空口无凭。最后还是想自己在GitHub留下一点痕迹，<del>以便之后更加自信的打工</del>，遂开始学习怎么把GitHub Page改成博客，记录自己的学习</p>
 <p><code>本文的实现基于Win10环境，博客地址：</code><a href="https://haoperfect.top" target="_blank" rel="noopener">haoperfect</a></p>
 <h3 id="环境的搭建"><a href="#环境的搭建" class="headerlink" title="环境的搭建"></a>环境的搭建</h3><h4 id="创建GitHub账号及博客资源库"><a href="#创建GitHub账号及博客资源库" class="headerlink" title="创建GitHub账号及博客资源库"></a>创建GitHub账号及博客资源库</h4><p>打开<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>创建一个自己的Github账号，然后创建一个Repositories,存放博客项目文件。</p>
-<div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582060473(1).jpg" width=200 height=200 alt="选择Git bash here"/>
+<div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582060473(1).jpg" width=200 height=200 alt="选择Git bash here"/></div>
 
-
-<p>​    新建的Repositories名称必须为<code>自己的用户名</code> .github.io</p>
-<div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/github创建文件.jpg" width=500 height=400 alt="选择Git bash here"/>
+<p>新建的Repositories名称必须为<code>自己的用户名</code> .github.io</p>
+<div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/github创建文件.jpg" width=500 height=400 alt="选择Git bash here"/></div>
 
 <p>然后打开新建的Repositories，点击<code>Setting</code></p>
-<div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/github setting.jpg" alt="Setting"/>
+<div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/github setting.jpg" alt="Setting"/></div>
 
 <p>然后找到<code>GitHub Pages</code> 点击 <code>Change theme</code></p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582090832(1).jpg" alt="Change theme"/></div>
@@ -24,6 +23,8 @@
 <p>然后再浏览器上输入：刚才创建的Repositories【<code>自己的用户名</code> .github.io】，没问题的话可以看到自己刚才选的博客页面。</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582091599(1)_副本.jpg" width=550 higth=300 alt="博客页面"/></div>
 
+
+
 <h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>简单的说 Node.js 就是运行在服务端的 JavaScript。<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">Node.js教程</a> <a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载地址</a> </p>
 <p>下载好后，选择好安装路径，按照默认配置安装。完成后在 <code>Win + R</code> 打开命令行</p>
 <p>分别输入：</p>
@@ -32,11 +33,15 @@
 <p>如果能查到版本号，说明安装成功</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/Node安装完成.jpg"/></div>
 
+
+
 <h4 id="安装并配置Git"><a href="#安装并配置Git" class="headerlink" title="安装并配置Git"></a>安装并配置Git</h4><p>首先下载 <a href="https://git-scm.com/download" target="_blank" rel="noopener">Git</a> 选择自己系统的版本，安装步骤一步到底。安装好后把 <code>bin</code>添加到<code>Path</code>环境变量中。</p>
 <p>然后在自己本地新建一个文件夹存放自己的博客的文件及相关配置如：<code>Myblog</code></p>
 <p>之后在空白处右键打开</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/001Github.jpg" width=200 height=250 alt="选择Git bash here"/>
 </div>
+
+
 
 <p>然后再git命令行输入如下配置：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line">git config --global user.email "you@example.com"</span><br><span class="line">git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
@@ -46,16 +51,20 @@
 
 <p>然后连续摁 <strong>3</strong> 次回车，也可在后两次输入密码。显示结果如下表示成功。<br>记录秘钥生成的路径。</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/生成秘钥.jpg "/></div> 
+用记事本打开生成的id_rsa.pub文件，复制里面的内容备用。
 
-<p>用记事本打开生成的id_rsa.pub文件，复制里面的内容备用。</p>
 <p>打开<a href="https://github.com/settings/keys" target="_blank" rel="noopener">GitHubSSH key页面</a> </p>
 <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582138579(1).jpg"/>
+
 
 <p>在<code>Title</code>中输入 任意 命名，Key中粘贴刚才复制的秘钥文件。</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582138670(1).jpg" width=500 height=300/></div>
 
+
 <p>显示如下界面表示添加成功：</p>
 <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582138898(1).jpg"/>
+
+
 
 <h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo文档</a> 后续很多博客相关的配置都需要跟Hexo命令打交道，所以有空可以多翻翻文档。笔者刚开始的时候看一脸懵逼，用多了渐渐地就看懂了不少玩意。</p>
 <p>在<code>git</code>命令行输入如下命令安装Hexo</p>
