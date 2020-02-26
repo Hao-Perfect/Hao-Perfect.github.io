@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-02-26T22:44:34.928Z</updated>
+  <updated>2020-02-26T22:53:11.013Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>萌新深度学习与Pytorch入门记录（一）：Win10下环境安装</title>
+    <link href="http://hao-perfect.github.io/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
+    <id>http://hao-perfect.github.io/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</id>
+    <published>2020-02-26T22:50:04.000Z</published>
+    <updated>2020-02-26T22:53:11.013Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;code&gt;本文是笔者早期开始在博客园写博客所记录，后搬运到自己的博客&lt;/code&gt;　　&lt;/p&gt;
+&lt;p&gt;深度学习从入门到入土，安装软件及配置环境踩了不少坑，过程中参考了多处博主给的解决方法，遂整合一下自己的采坑记录。&lt;/p&gt;
+&lt;p&gt;　　（若遇到不一样的错误，请参考其他博主答
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Pycharm" scheme="http://Hao-Perfect.github.io/categories/Pycharm/"/>
+    
+      <category term="Anaconda" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/"/>
+    
+      <category term="深度学习" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="cuda" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/"/>
+    
+      <category term="Pytorch" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/Pytorch/"/>
+    
+      <category term="Python" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/Pytorch/Python/"/>
+    
+    
+      <category term="Pycharm" scheme="http://Hao-Perfect.github.io/tags/Pycharm/"/>
+    
+      <category term="Anaconda" scheme="http://Hao-Perfect.github.io/tags/Anaconda/"/>
+    
+      <category term="深度学习" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="cuda" scheme="http://Hao-Perfect.github.io/tags/cuda/"/>
+    
+      <category term="Pytorch" scheme="http://Hao-Perfect.github.io/tags/Pytorch/"/>
+    
+      <category term="Python" scheme="http://Hao-Perfect.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>采坑之GitHub Page改成博客</title>
