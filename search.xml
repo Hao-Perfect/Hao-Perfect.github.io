@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>测试RSS</title>
+    <url>/2020/02/27/%E6%B5%8B%E8%AF%95RSS/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>采坑之GitHub Page改成博客</title>
     <url>/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="采坑之GitHub-Page改成博客"><a href="#采坑之GitHub-Page改成博客" class="headerlink" title="采坑之GitHub Page改成博客"></a>采坑之GitHub Page改成博客</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>渴望掌握各种技术的娃子，应该都有做技术笔记的经历，笔者大学期间做过不少小项目，也自己玩弄了一些好玩的东西，虽然自己也有本地做一些笔记的经验，但是硬盘出错导致全军覆没，再加上记忆还是比不过时间的洗刷。临近毕业，被面试的技术dalao怼的不敢说话，列举自己的项目经历又空口无凭。最后还是想自己在GitHub留下一点痕迹，<del>以便之后更加自信的打工</del>，遂开始学习怎么把GitHub Page改成博客，记录自己的学习</p>
