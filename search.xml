@@ -66,16 +66,11 @@
 ]]></content>
       <categories>
         <category>深度学习</category>
-        <category>Pycharm</category>
-        <category>Anaconda</category>
-        <category>cuda</category>
-        <category>Pytorch</category>
-        <category>Python</category>
       </categories>
       <tags>
+        <tag>深度学习</tag>
         <tag>Pycharm</tag>
         <tag>Anaconda</tag>
-        <tag>深度学习</tag>
         <tag>cuda</tag>
         <tag>Pytorch</tag>
         <tag>Python</tag>
