@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>测试RSS</title>
-    <url>/2020/02/27/%E6%B5%8B%E8%AF%95RSS/</url>
-    <content><![CDATA[<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4>]]></content>
-  </entry>
-  <entry>
     <title>采坑之GitHub Page改成博客</title>
     <url>/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h2 id="采坑之GitHub-Page改成博客"><a href="#采坑之GitHub-Page改成博客" class="headerlink" title="采坑之GitHub Page改成博客"></a>采坑之GitHub Page改成博客</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>渴望掌握各种技术的娃子，应该都有做技术笔记的经历，笔者大学期间做过不少小项目，也自己玩弄了一些好玩的东西，虽然自己也有本地做一些笔记的经验，但是硬盘出错导致全军覆没，再加上记忆还是比不过时间的洗刷。临近毕业，被面试的技术dalao怼的不敢说话，列举自己的项目经历又空口无凭。最后还是想自己在GitHub留下一点痕迹，<del>以便之后更加自信的打工</del>，遂开始学习怎么把GitHub Page改成博客，记录自己的学习</p>
@@ -151,6 +146,37 @@
 
 <p>其中 <code>avatar</code> 可直接在 目录下 放置一个图片当博客头像。</p>
 <h5 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h5><p>RSS（简易信息聚合）是一种消息来源格式规范，用以聚合经常发布更新数据的网站，例如博客文章、新闻、音频或视频的网摘。RSS文件（或称做摘要、网络摘要、或频更新，提供到频道）包含全文或是节录的文字，再加上发布者所订阅之网摘数据和授权的元数据。<br>        简单的说就是订阅网站的方式。别人可以通过RSS订阅我们的博客更新。</p>
+<h6 id="如何设置"><a href="#如何设置" class="headerlink" title="如何设置"></a>如何设置</h6><p>首先安装 hexo-generator-feed，在 blog目录下输入:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+
+<p>然后打开 <code>_config.yml</code> <strong>主题配置文件</strong> ，找到 <strong>free</strong>，去掉注释符号 <code>#</code></p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582744414(1).jpg"/>
+
+<p>配置好后更新即可。</p>
+<h6 id="怎么订阅"><a href="#怎么订阅" class="headerlink" title="怎么订阅"></a>怎么订阅</h6><p>笔者使用的是Google浏览器，直接安装feeder插件。</p>
+<ol>
+<li><p>Google网上应用商店中，添加feeder插件</p>
+</li>
+<li><p>注册feeder账号，然后登录</p>
+</li>
+<li><p>浏览博客时，点击RSS订阅图标，即可跳转如下订阅页面。点击 Subscribe 订阅即可。</p>
+ <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582744974(1).jpg"/>
+
+
+
+</li>
+</ol>
+<h5 id="设置代码高亮主题"><a href="#设置代码高亮主题" class="headerlink" title="设置代码高亮主题"></a>设置代码高亮主题</h5><p>打开 <code>_config.yml</code> <strong>主题配置文件</strong> ，找到 <strong>highlight_theme</strong> </p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582749463(1).jpg"/>
+
+<p>有如下代码主题可选：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">normal | night | night eighties | night blue | night bright</span><br></pre></td></tr></table></figure>
+
+<p>对应样式如下：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582749325(1).jpg"/>
+
+
+
 <h5 id="添加版权信息"><a href="#添加版权信息" class="headerlink" title="添加版权信息"></a>添加版权信息</h5><p>打开主题配置文件<code>_config.yml</code> 搜索 <code>post_copyright</code>,修改  enable 为 true。如下图所示：</p>
 <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742344(1).jpg"/>
 
@@ -166,7 +192,22 @@
 <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742998(1).jpg"/>
 
 <p>然后更新部署博客即可。</p>
-<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">Next主题配置</a></p>
+<h5 id="设置【网易云播放器】"><a href="#设置【网易云播放器】" class="headerlink" title="设置【网易云播放器】"></a>设置【网易云播放器】</h5><p>打开 <a href="https://music.163.com/" target="_blank" rel="noopener"><code>网页版网易云播放器</code></a> ，选择自己喜欢的音乐，笔者选用许嵩的《如果当时》作为例子。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582754821(1).jpg"/>
+
+<p>选择【生成外链播放器】</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582755000(1).jpg"/>
+
+<p>根据自己的需要调整大小，然后复制HTML代码。</p>
+<p>然后打开<code>blog\themes\next\layout\_macro\sidebar.swig</code>插入复制的代码。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582755474(1).jpg"/>
+
+<p>重新更新部署即可，效果如下：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582755561(1).jpg"/>
+
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><ol>
+<li><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">Next主题配置</a> </li>
+</ol>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h4 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h4><p>我们每次访问自己的博客的时候，使用的是 <code>用户名.github.io</code>，有时候我们需要实用更加个性化的域名。我们可以申请个域名，然后绑定到自己的博客地址。笔者使用的是 阿里云的<a href="https://wanwang.aliyun.com/?spm=5176.12825654.eofdhaal5.9.e9392c4abDOGxf&aly_as=2mEOHt16" target="_blank" rel="noopener">万网</a>的域名,直接登录注册一个个性化的域名即可。</p>
 <h4 id="添加域名解析"><a href="#添加域名解析" class="headerlink" title="添加域名解析"></a>添加域名解析</h4><p>之后我们打开<a href="https://dns.console.aliyun.com/?spm=a2c1d.8251892.0.0.7d675b76aXQK4k#/dns/domainList" target="_blank" rel="noopener">云解析控制台</a> </p>
 <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582311696(1).png"/>
@@ -274,7 +315,10 @@
 <li><code>page</code>： 创建一个页面                      【路径为：source 】</li>
 <li><code>draft</code>  创建一个草稿                       【路径为：source/_drafts】</li>
 </ol>
-<h4 id="删除博客"><a href="#删除博客" class="headerlink" title="删除博客"></a>删除博客</h4>]]></content>
+<h4 id="删除博客"><a href="#删除博客" class="headerlink" title="删除博客"></a>删除博客</h4><p>直接在本地删除不需要的博客，然后再更新即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>markdown测试文件</title>
