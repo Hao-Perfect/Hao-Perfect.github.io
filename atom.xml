@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-02-26T22:53:11.013Z</updated>
+  <updated>2020-02-26T23:00:56.246Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://hao-perfect.github.io/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
     <id>http://hao-perfect.github.io/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</id>
     <published>2020-02-26T22:50:04.000Z</published>
-    <updated>2020-02-26T22:53:11.013Z</updated>
+    <updated>2020-02-26T23:00:56.246Z</updated>
     
     <summary type="html">
     
@@ -51,17 +51,15 @@
       <category term="Python" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/Pytorch/Python/"/>
     
     
-      <category term="Pycharm" scheme="http://Hao-Perfect.github.io/tags/Pycharm/"/>
+      <category term="深度学习,Pycharm" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Pycharm/"/>
     
-      <category term="Anaconda" scheme="http://Hao-Perfect.github.io/tags/Anaconda/"/>
+      <category term="深度学习,Anaconda" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Anaconda/"/>
     
-      <category term="深度学习" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="深度学习,cuda" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-cuda/"/>
     
-      <category term="cuda" scheme="http://Hao-Perfect.github.io/tags/cuda/"/>
+      <category term="深度学习,Pytorch" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Pytorch/"/>
     
-      <category term="Pytorch" scheme="http://Hao-Perfect.github.io/tags/Pytorch/"/>
-    
-      <category term="Python" scheme="http://Hao-Perfect.github.io/tags/Python/"/>
+      <category term="深度学习,Python" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Python/"/>
     
   </entry>
   
