@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-02-26T22:28:45.621Z</updated>
+  <updated>2020-02-26T22:44:34.928Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://hao-perfect.github.io/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/"/>
     <id>http://hao-perfect.github.io/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-02-19T19:59:53.000Z</published>
-    <updated>2020-02-26T22:28:45.621Z</updated>
+    <updated>2020-02-26T22:44:34.928Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,14 @@
     </summary>
     
     
+      <category term="Github建站" scheme="http://Hao-Perfect.github.io/categories/Github%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="Hexo博客" scheme="http://Hao-Perfect.github.io/categories/Github%E5%BB%BA%E7%AB%99/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Github建站" scheme="http://Hao-Perfect.github.io/tags/Github%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="Hexo博客" scheme="http://Hao-Perfect.github.io/tags/Hexo%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -105,8 +113,8 @@
     <title>Hello</title>
     <link href="http://hao-perfect.github.io/2020/02/16/hello-world/"/>
     <id>http://hao-perfect.github.io/2020/02/16/hello-world/</id>
-    <published>2020-02-15T18:44:43.205Z</published>
-    <updated>2020-02-18T20:48:58.849Z</updated>
+    <published>2020-02-15T21:18:04.000Z</published>
+    <updated>2020-02-26T22:43:19.602Z</updated>
     
     <summary type="html">
     
@@ -123,6 +131,8 @@
     
       <category term="随笔" scheme="http://Hao-Perfect.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
+    
+      <category term="随笔" scheme="http://Hao-Perfect.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

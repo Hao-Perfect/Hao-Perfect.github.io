@@ -319,6 +319,14 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>Github建站</category>
+        <category>Hexo博客</category>
+      </categories>
+      <tags>
+        <tag>Github建站</tag>
+        <tag>Hexo博客</tag>
+      </tags>
   </entry>
   <entry>
     <title>markdown测试文件</title>
@@ -467,5 +475,8 @@
       <categories>
         <category>随笔</category>
       </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
 </search>
