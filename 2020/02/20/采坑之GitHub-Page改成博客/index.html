@@ -111,6 +111,10 @@
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200220033614.png">
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582141406(1).jpg">
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/%E5%9B%BE%E7%89%871.png">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/a47957cc2b4d6c5a1260259de0ca527.jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742344(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742587(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742998(1).jpg">
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582311696(1).png">
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582312261.jpg">
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582312475(1).jpg">
@@ -129,7 +133,7 @@
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582219550(1).jpg">
 <meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582219966(1).jpg">
 <meta property="article:published_time" content="2020-02-19T19:59:53.000Z">
-<meta property="article:modified_time" content="2020-02-21T20:06:04.477Z">
+<meta property="article:modified_time" content="2020-02-26T18:51:39.388Z">
 <meta property="article:author" content="Hao_Perfect">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582060473(1).jpg">
@@ -452,7 +456,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.4k 字
+                  3.7k 字
                 </span>
               
 
@@ -468,7 +472,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  12 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -508,16 +512,18 @@
 然后再浏览器上输入：刚才创建的Repositories【`自己的用户名` .github.io】，没问题的话可以看到自己刚才选的博客页面。
 
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582091599(1)_副本.jpg" width=550 higth=300 alt="博客页面"/></div>
+#### 安装Node.js
 
-<h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p>简单的说 Node.js 就是运行在服务端的 JavaScript。<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">Node.js教程</a> <a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载地址</a> </p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html" target="_blank" rel="noopener">Node.js教程</a> <a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">下载地址</a> </p>
 <p>下载好后，选择好安装路径，按照默认配置安装。完成后在 <code>Win + R</code> 打开命令行</p>
 <p>分别输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
 
 <p>如果能查到版本号，说明安装成功</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/Node安装完成.jpg"/></div>
+#### 安装并配置Git
 
-<h4 id="安装并配置Git"><a href="#安装并配置Git" class="headerlink" title="安装并配置Git"></a>安装并配置Git</h4><p>首先下载 <a href="https://git-scm.com/download" target="_blank" rel="noopener">Git</a> 选择自己系统的版本，安装步骤一步到底。安装好后把 <code>bin</code>添加到<code>Path</code>环境变量中。</p>
+<p>首先下载 <a href="https://git-scm.com/download" target="_blank" rel="noopener">Git</a> 选择自己系统的版本，安装步骤一步到底。安装好后把 <code>bin</code>添加到<code>Path</code>环境变量中。</p>
 <p>然后在自己本地新建一个文件夹存放自己的博客的文件及相关配置如：<code>Myblog</code></p>
 <p>之后在空白处右键打开</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/001Github.jpg" width=200 height=250 alt="选择Git bash here"/>
@@ -618,8 +624,33 @@
 <p>清除缓存输入:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
 
+<p>到此处，我们就已经把博客的主题换成了 Next 主题。</p>
 <h4 id="Next主题美化"><a href="#Next主题美化" class="headerlink" title="Next主题美化"></a>Next主题美化</h4><h5 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h5><p>Next更换完毕，为了更好地展示自己的个性，我们可以在主题上增加插件。</p>
-<h5 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h5><h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">Next主题配置</a></p>
+<p>我们对Next主题进行个性化设置，大部分修改目录 </p>
+<ol>
+<li><code>blog/themes/next</code>下的 <code>_config.yml</code> <strong>主题配置文件</strong></li>
+<li><code>blog</code>下的 <code>_config.yml</code> <strong>站点配置文件</strong></li>
+</ol>
+<h5 id="设置博客主要信息"><a href="#设置博客主要信息" class="headerlink" title="设置博客主要信息"></a>设置博客主要信息</h5><p>打开 <code>_config.yml</code> <strong>站点配置文件</strong> ，找到 Site，相关设置可参考笔者如下说明。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/a47957cc2b4d6c5a1260259de0ca527.jpg"/>
+
+<p>其中 <code>avatar</code> 可直接在 目录下 放置一个图片当博客头像。</p>
+<h5 id="设置-RSS"><a href="#设置-RSS" class="headerlink" title="设置 RSS"></a>设置 RSS</h5><h5 id="添加版权信息"><a href="#添加版权信息" class="headerlink" title="添加版权信息"></a>添加版权信息</h5><p>打开主题配置文件<code>_config.yml</code> 搜索 <code>post_copyright</code>,修改  enable 为 true。如下图所示：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742344(1).jpg"/>
+
+<p>然后打开 站点配置文件<code>_config.yml</code> ，搜索url，把内容改成自己的博客地址：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742587(1).jpg"/>
+
+<p>然后更新即可。</p>
+<p>这个时候我们的文章后面就有版权协议的相关信息。有时候我们需要让协议出现在 文章 开头，更加能引起关注。</p>
+<p>打开<code>themes\next\layout\_macro\post.swig</code>，复制如下的几行代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if theme.post_copyright.enable and not is_index %&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&#123;% include &#39;post-copyright.swig&#39; with &#123; post: post &#125; %&#125;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">&lt;&#x2F;br &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;br &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后复制到如下位置：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582742998(1).jpg"/>
+
+<p>然后更新部署博客即可。</p>
+<h5 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h5><p><a href="http://theme-next.iissnan.com/theme-settings.html" target="_blank" rel="noopener">Next主题配置</a></p>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><h4 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h4><p>我们每次访问自己的博客的时候，使用的是 <code>用户名.github.io</code>，有时候我们需要实用更加个性化的域名。我们可以申请个域名，然后绑定到自己的博客地址。笔者使用的是 阿里云的<a href="https://wanwang.aliyun.com/?spm=5176.12825654.eofdhaal5.9.e9392c4abDOGxf&aly_as=2mEOHt16" target="_blank" rel="noopener">万网</a>的域名,直接登录注册一个个性化的域名即可。</p>
 <h4 id="添加域名解析"><a href="#添加域名解析" class="headerlink" title="添加域名解析"></a>添加域名解析</h4><p>之后我们打开<a href="https://dns.console.aliyun.com/?spm=a2c1d.8251892.0.0.7d675b76aXQK4k#/dns/domainList" target="_blank" rel="noopener">云解析控制台</a> </p>
 <img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582311696(1).png"/>
@@ -969,7 +1000,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#采坑之GitHub-Page改成博客"><span class="nav-number">1.</span> <span class="nav-text">采坑之GitHub Page改成博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境的搭建"><span class="nav-number">1.2.</span> <span class="nav-text">环境的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建GitHub账号及博客资源库"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建GitHub账号及博客资源库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装并配置Git"><span class="nav-number">1.2.3.</span> <span class="nav-text">安装并配置Git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置博客推送"><span class="nav-number">1.2.5.</span> <span class="nav-text">配置博客推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署网站"><span class="nav-number">1.2.6.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐软件"><span class="nav-number">1.2.7.</span> <span class="nav-text">推荐软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设置"><span class="nav-number">2.</span> <span class="nav-text">主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更换博客主题"><span class="nav-number">2.0.1.</span> <span class="nav-text">更换博客主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载主题"><span class="nav-number">2.0.2.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next主题美化"><span class="nav-number">2.0.3.</span> <span class="nav-text">Next主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概述-1"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置-RSS"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">设置 RSS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">3.</span> <span class="nav-text">绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-2"><span class="nav-number">3.0.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加域名解析"><span class="nav-number">3.0.2.</span> <span class="nav-text">添加域名解析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加图床"><span class="nav-number">4.</span> <span class="nav-text">添加图床</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-3"><span class="nav-number">4.0.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择阿里云OSS做图床"><span class="nav-number">4.0.2.</span> <span class="nav-text">选择阿里云OSS做图床</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#购买阿里云oss服务"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">购买阿里云oss服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建Bucket"><span class="nav-number">4.0.2.2.</span> <span class="nav-text">新建Bucket</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置PicGo-上传图片"><span class="nav-number">4.0.2.3.</span> <span class="nav-text">配置PicGo 上传图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图片压缩工具"><span class="nav-number">4.0.2.4.</span> <span class="nav-text">图片压缩工具</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Caesium"><span class="nav-number">4.0.2.4.1.</span> <span class="nav-text">Caesium</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#美图秀秀"><span class="nav-number">4.0.2.4.2.</span> <span class="nav-text">美图秀秀</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章-1"><span class="nav-number">4.0.2.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo基本操作"><span class="nav-number">5.</span> <span class="nav-text">Hexo基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-4"><span class="nav-number">5.0.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个博客"><span class="nav-number">5.0.2.</span> <span class="nav-text">新建一个博客</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#采坑之GitHub-Page改成博客"><span class="nav-number">1.</span> <span class="nav-text">采坑之GitHub Page改成博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境的搭建"><span class="nav-number">1.2.</span> <span class="nav-text">环境的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建GitHub账号及博客资源库"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建GitHub账号及博客资源库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Hexo"><span class="nav-number">1.2.2.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置博客推送"><span class="nav-number">1.2.3.</span> <span class="nav-text">配置博客推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署网站"><span class="nav-number">1.2.4.</span> <span class="nav-text">部署网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#推荐软件"><span class="nav-number">1.2.5.</span> <span class="nav-text">推荐软件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题设置"><span class="nav-number">2.</span> <span class="nav-text">主题设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#更换博客主题"><span class="nav-number">2.0.1.</span> <span class="nav-text">更换博客主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载主题"><span class="nav-number">2.0.2.</span> <span class="nav-text">下载主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next主题美化"><span class="nav-number">2.0.3.</span> <span class="nav-text">Next主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#概述-1"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置博客主要信息"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">设置博客主要信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置-RSS"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">设置 RSS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加版权信息"><span class="nav-number">2.0.3.4.</span> <span class="nav-text">添加版权信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章"><span class="nav-number">2.0.3.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">3.</span> <span class="nav-text">绑定域名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-2"><span class="nav-number">3.0.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加域名解析"><span class="nav-number">3.0.2.</span> <span class="nav-text">添加域名解析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加图床"><span class="nav-number">4.</span> <span class="nav-text">添加图床</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-3"><span class="nav-number">4.0.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择阿里云OSS做图床"><span class="nav-number">4.0.2.</span> <span class="nav-text">选择阿里云OSS做图床</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#购买阿里云oss服务"><span class="nav-number">4.0.2.1.</span> <span class="nav-text">购买阿里云oss服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#新建Bucket"><span class="nav-number">4.0.2.2.</span> <span class="nav-text">新建Bucket</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置PicGo-上传图片"><span class="nav-number">4.0.2.3.</span> <span class="nav-text">配置PicGo 上传图片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#图片压缩工具"><span class="nav-number">4.0.2.4.</span> <span class="nav-text">图片压缩工具</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Caesium"><span class="nav-number">4.0.2.4.1.</span> <span class="nav-text">Caesium</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#美图秀秀"><span class="nav-number">4.0.2.4.2.</span> <span class="nav-text">美图秀秀</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文章-1"><span class="nav-number">4.0.2.5.</span> <span class="nav-text">参考文章</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo基本操作"><span class="nav-number">5.</span> <span class="nav-text">Hexo基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-4"><span class="nav-number">5.0.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建一个博客"><span class="nav-number">5.0.2.</span> <span class="nav-text">新建一个博客</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1011,7 +1042,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.9k</span>
+    <span title="Site words total count">4.2k</span>
   
 <br><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="noopener">粤ICP备20002606号</a></br>
 
