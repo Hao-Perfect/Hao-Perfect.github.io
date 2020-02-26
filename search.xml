@@ -65,25 +65,26 @@
 <p>　　（信心满满开始学习，差点死在环境配置上，记花了两天时间安装软件及环境的路程）】</p>
 ]]></content>
       <categories>
+        <category>深度学习</category>
         <category>Pycharm</category>
         <category>Anaconda</category>
-        <category>深度学习</category>
         <category>cuda</category>
         <category>Pytorch</category>
         <category>Python</category>
       </categories>
       <tags>
-        <tag>深度学习,Pycharm</tag>
-        <tag>深度学习,Anaconda</tag>
-        <tag>深度学习,cuda</tag>
-        <tag>深度学习,Pytorch</tag>
-        <tag>深度学习,Python</tag>
+        <tag>Pycharm</tag>
+        <tag>Anaconda</tag>
+        <tag>深度学习</tag>
+        <tag>cuda</tag>
+        <tag>Pytorch</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
     <title>采坑之GitHub Page改成博客</title>
     <url>/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h2 id="采坑之GitHub-Page改成博客"><a href="#采坑之GitHub-Page改成博客" class="headerlink" title="采坑之GitHub Page改成博客"></a>采坑之GitHub Page改成博客</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>渴望掌握各种技术的娃子，应该都有做技术笔记的经历，笔者大学期间做过不少小项目，也自己玩弄了一些好玩的东西，虽然自己也有本地做一些笔记的经验，但是硬盘出错导致全军覆没，再加上记忆还是比不过时间的洗刷。临近毕业，被面试的技术dalao怼的不敢说话，列举自己的项目经历又空口无凭。最后还是想自己在GitHub留下一点痕迹，<del>以便之后更加自信的打工</del>，遂开始学习怎么把GitHub Page改成博客，记录自己的学习</p>
+    <content><![CDATA[<h1 id="采坑之GitHub-Page改成博客"><a href="#采坑之GitHub-Page改成博客" class="headerlink" title="采坑之GitHub Page改成博客"></a>采坑之GitHub Page改成博客</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>渴望掌握各种技术的娃子，应该都有做技术笔记的经历，笔者大学期间做过不少小项目，也自己玩弄了一些好玩的东西，虽然自己也有本地做一些笔记的经验，但是硬盘出错导致全军覆没，再加上记忆还是比不过时间的洗刷。临近毕业，被面试的技术dalao怼的不敢说话，列举自己的项目经历又空口无凭。最后还是想自己在GitHub留下一点痕迹，<del>以便之后更加自信的打工</del>，遂开始学习怎么把GitHub Page改成博客，记录自己的学习</p>
 <p><code>本文的实现基于Win10环境，博客地址：</code><a href="https://haoperfect.top" target="_blank" rel="noopener">haoperfect</a></p>
 <h3 id="环境的搭建"><a href="#环境的搭建" class="headerlink" title="环境的搭建"></a>环境的搭建</h3><h4 id="创建GitHub账号及博客资源库"><a href="#创建GitHub账号及博客资源库" class="headerlink" title="创建GitHub账号及博客资源库"></a>创建GitHub账号及博客资源库</h4><p>打开<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>创建一个自己的Github账号，然后创建一个Repositories,存放博客项目文件。</p>
 <div align=center><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1582060473(1).jpg" width=200 height=200 alt="选择Git bash here"/></div>
@@ -400,12 +401,14 @@
 
 ]]></content>
       <categories>
+        <category>博客</category>
         <category>Github建站</category>
         <category>Hexo博客</category>
       </categories>
       <tags>
         <tag>Github建站</tag>
         <tag>Hexo博客</tag>
+        <tag>Next</tag>
       </tags>
   </entry>
   <entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-02-26T23:00:56.246Z</updated>
+  <updated>2020-02-26T23:11:42.282Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://hao-perfect.github.io/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
     <id>http://hao-perfect.github.io/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</id>
     <published>2020-02-26T22:50:04.000Z</published>
-    <updated>2020-02-26T23:00:56.246Z</updated>
+    <updated>2020-02-26T23:11:42.282Z</updated>
     
     <summary type="html">
     
@@ -38,28 +38,30 @@
     </summary>
     
     
-      <category term="Pycharm" scheme="http://Hao-Perfect.github.io/categories/Pycharm/"/>
+      <category term="深度学习" scheme="http://Hao-Perfect.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="Anaconda" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/"/>
+      <category term="Pycharm" scheme="http://Hao-Perfect.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Pycharm/"/>
     
-      <category term="深度学习" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="Anaconda" scheme="http://Hao-Perfect.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Anaconda/"/>
     
-      <category term="cuda" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/"/>
+      <category term="cuda" scheme="http://Hao-Perfect.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/"/>
     
-      <category term="Pytorch" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/Pytorch/"/>
+      <category term="Pytorch" scheme="http://Hao-Perfect.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Pytorch/"/>
     
-      <category term="Python" scheme="http://Hao-Perfect.github.io/categories/Pycharm/Anaconda/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cuda/Pytorch/Python/"/>
+      <category term="Python" scheme="http://Hao-Perfect.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/Python/"/>
     
     
-      <category term="深度学习,Pycharm" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Pycharm/"/>
+      <category term="Pycharm" scheme="http://Hao-Perfect.github.io/tags/Pycharm/"/>
     
-      <category term="深度学习,Anaconda" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Anaconda/"/>
+      <category term="Anaconda" scheme="http://Hao-Perfect.github.io/tags/Anaconda/"/>
     
-      <category term="深度学习,cuda" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-cuda/"/>
+      <category term="深度学习" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="深度学习,Pytorch" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Pytorch/"/>
+      <category term="cuda" scheme="http://Hao-Perfect.github.io/tags/cuda/"/>
     
-      <category term="深度学习,Python" scheme="http://Hao-Perfect.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-Python/"/>
+      <category term="Pytorch" scheme="http://Hao-Perfect.github.io/tags/Pytorch/"/>
+    
+      <category term="Python" scheme="http://Hao-Perfect.github.io/tags/Python/"/>
     
   </entry>
   
@@ -68,7 +70,7 @@
     <link href="http://hao-perfect.github.io/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/"/>
     <id>http://hao-perfect.github.io/2020/02/20/%E9%87%87%E5%9D%91%E4%B9%8BGitHub-Page%E6%94%B9%E6%88%90%E5%8D%9A%E5%AE%A2/</id>
     <published>2020-02-19T19:59:53.000Z</published>
-    <updated>2020-02-26T22:44:34.928Z</updated>
+    <updated>2020-02-26T23:14:23.990Z</updated>
     
     <summary type="html">
     
@@ -76,21 +78,25 @@
       
         
         
-          &lt;h2 id=&quot;采坑之GitHub-Page改成博客&quot;&gt;&lt;a href=&quot;#采坑之GitHub-Page改成博客&quot; class=&quot;headerlink&quot; title=&quot;采坑之GitHub Page改成博客&quot;&gt;&lt;/a&gt;采坑之GitHub Page改成博客&lt;/h2&gt;&lt;h3
+          &lt;h1 id=&quot;采坑之GitHub-Page改成博客&quot;&gt;&lt;a href=&quot;#采坑之GitHub-Page改成博客&quot; class=&quot;headerlink&quot; title=&quot;采坑之GitHub Page改成博客&quot;&gt;&lt;/a&gt;采坑之GitHub Page改成博客&lt;/h1&gt;&lt;h2
         
       
     
     </summary>
     
     
-      <category term="Github建站" scheme="http://Hao-Perfect.github.io/categories/Github%E5%BB%BA%E7%AB%99/"/>
+      <category term="博客" scheme="http://Hao-Perfect.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="Hexo博客" scheme="http://Hao-Perfect.github.io/categories/Github%E5%BB%BA%E7%AB%99/Hexo%E5%8D%9A%E5%AE%A2/"/>
+      <category term="Github建站" scheme="http://Hao-Perfect.github.io/categories/%E5%8D%9A%E5%AE%A2/Github%E5%BB%BA%E7%AB%99/"/>
+    
+      <category term="Hexo博客" scheme="http://Hao-Perfect.github.io/categories/%E5%8D%9A%E5%AE%A2/Hexo%E5%8D%9A%E5%AE%A2/"/>
     
     
       <category term="Github建站" scheme="http://Hao-Perfect.github.io/tags/Github%E5%BB%BA%E7%AB%99/"/>
     
       <category term="Hexo博客" scheme="http://Hao-Perfect.github.io/tags/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Next" scheme="http://Hao-Perfect.github.io/tags/Next/"/>
     
   </entry>
   
