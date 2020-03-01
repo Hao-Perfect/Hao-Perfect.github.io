@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>VSCode超炫的插件-power-mode</title>
+    <url>/2020/03/01/VSCode%E8%B6%85%E7%82%AB%E7%9A%84%E6%8F%92%E4%BB%B6-power-mode/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>之前看到有个博主发了一个好玩的编辑器，有很多比较炫酷的特效——<code>Atom</code>，后来自己下载了，发现有点大，还有点卡。想到VSCode应该也有相应的插件。所以就搜索了一番找到了<code>power-mode</code>这个插件。</p>
+<h2 id="设置步骤"><a href="#设置步骤" class="headerlink" title="设置步骤"></a>设置步骤</h2><p>在插件列表搜索 <code>Power Mode</code>,然后安装。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1583064780(1).jpg"/>
+
+<p>安装好后，打开坐下角的<code>设置</code>，在搜索栏中搜索 <code>setting.json</code>,然后打开<code>在settings.json中编辑</code></p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1583065089(1).jpg"/>
+
+<p>添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;** 特效 **&#x2F;</span><br><span class="line">    &quot;powermode.enabled&quot;: true,         &#x2F;&#x2F;是否开启</span><br><span class="line">    &quot;powermode.enableShake&quot;: true,    &#x2F;&#x2F;是否抖动</span><br><span class="line">    &quot;powermode.presets&quot;: &quot;particles&quot;,   &#x2F;&#x2F;动画效果 </span><br><span class="line">&#x2F;*供选择的特效：Valid values:</span><br><span class="line">“particles”, “fireworks”, “flames”, “magic”, “clippy”, “simple-rift”, “exploding-rift”*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>参考样式：</p>
+<p>Particles</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1583065729(1).jpg" height="100" width="700"/>
+
+<p>fireworks</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200301202936.png" height="100" width="700"/>
+
+<p>magic</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200301203221.png" height="100" width="700"/>
+
+<p>clippy</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200301203245.png" height="100" width="700"/>
+
+<p>simple-rift</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200301203333.png" height="100" width="700"/>
+
+<p>exploding-rift</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200301203314.png" height="100" width="700"/>
+
+<p>需要其他更炫酷的配置，可参考如下说明：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F; &#x2F;影响用于显示GIF的CSS属性。“.”使用gif作为掩码，让背景通过（类似于原子功率模式），而“image”将显示实际的gif。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &quot;powermode.backgroundMode&quot;: &quot;mask&quot;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;激活激活模式所需的组合编号！！！！              </span><br><span class="line">　&quot;powermode.comboThreshold&quot;: 0,</span><br><span class="line">&#x2F;启用激活电源模式！！！！              </span><br><span class="line">&quot;powermode.enabled&quot;: false,</span><br><span class="line">&#x2F;&#x2F;&#39;重新启动&#39;将重新启动GIF每次显示，“继续”将继续播放它从它的前一点              </span><br><span class="line"> &quot;powermode.gifMode&quot;: &quot;continue&quot;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;使用背景图像的“url()”部分中可以放入的任何内容，例如base64编码的gif或绝对文件路径WITHOUT引号。URL必须是HTTPS。           </span><br><span class="line"></span><br><span class="line">&quot;powermode.customExplosions&quot;: [],</span><br><span class="line"></span><br><span class="line">&#x2F;屏幕抖动的强度             </span><br><span class="line">&quot;powermode.shakeIntensity&quot;: 5,</span><br><span class="line">&#x2F;&#x2F;设置为false以在键入时禁用爆炸             </span><br><span class="line">&quot;powermode.enableExplosions&quot;: true,        </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;设置为false以在键入时禁用抖动             </span><br><span class="line">&quot;powermode.enableShake&quot;: true,           </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;设置为false以禁用显示在状态栏中的组合             </span><br><span class="line">&quot;powermode.enableStatusBarComboCounter&quot;: true,   </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;组合重置前的秒数              </span><br><span class="line">&quot;powermode.comboTimeout&quot;: 10,        </span><br><span class="line"></span><br><span class="line">&#x2F;确定爆炸持续多长时间（毫秒）。设置为0，它将永远持续下去。              </span><br><span class="line">&quot;powermode.explosionDuration&quot;: 1000,</span><br><span class="line">              </span><br><span class="line">&#x2F;触发爆炸所需的击键次数。2意味着每一秒击键都会爆炸，1意味着每次击键。              </span><br><span class="line">&quot;powermode.explosionFrequency&quot;: 2,</span><br><span class="line">              </span><br><span class="line">&#x2F;爆炸的垂直偏移。增加它将推动爆炸，减少它将使它们下降。              </span><br><span class="line">&quot;powermode.explosionOffset&quot;: 0.35,</span><br><span class="line">              </span><br><span class="line">&#x2F;确定爆炸是如何循环的。随机（默认）从列表中随机选取。顺序“按顺序遍历列表，一个数字将在列表中选择基于（零）索引的爆炸。             </span><br><span class="line">&quot;powermode.explosionOrder&quot;: &quot;random&quot;,</span><br><span class="line">             </span><br><span class="line">爆炸的大小。对于值x，高度设置为x REM，宽度设置为xCH。             </span><br><span class="line">&quot;powermode.explosionSize&quot;: 6,  </span><br><span class="line"></span><br><span class="line">&#x2F;设置适用于爆炸元素的自定义CSS。             </span><br><span class="line">&quot;powermode.customCss&quot;: &#123;&#125;,</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;同时爆炸的最大次数             </span><br><span class="line">&quot;powermode.maxExplosions&quot;: 1,          </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;在不同的预设GIFs之间选择使用PosikMod              </span><br><span class="line">&quot;powermode.presets&quot;: &quot;particles&quot;,</span><br><span class="line">              </span><br><span class="line">&#x2F;&#x2F;设置为false以禁用显示状态栏中的定时器</span><br><span class="line">&quot;powermode.enableStatusBarComboTimer&quot;: true</span><br></pre></td></tr></table></figure>
+
+<p>设置好后，即可炫酷的Coding~~</p>
+]]></content>
+      <categories>
+        <category>VSCode</category>
+      </categories>
+      <tags>
+        <tag>VSCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>超炫酷的编辑器-Atom</title>
+    <url>/2020/03/01/%E8%B6%85%E7%82%AB%E9%85%B7%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8-Atom/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>萌新深度学习与Pytorch入门记录（一）：Win10下环境安装</title>
     <url>/2020/02/27/%E8%90%8C%E6%96%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%8EPytorch%E5%85%A5%E9%97%A8%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9AWin10%E4%B8%8B%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<p><code>本文是笔者早期开始在博客园写博客所记录，后搬运到自己的博客</code>　　</p>

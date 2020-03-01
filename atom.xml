@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-02-26T23:17:00.053Z</updated>
+  <updated>2020-03-01T12:34:47.731Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode超炫的插件-power-mode</title>
+    <link href="http://hao-perfect.github.io/2020/03/01/VSCode%E8%B6%85%E7%82%AB%E7%9A%84%E6%8F%92%E4%BB%B6-power-mode/"/>
+    <id>http://hao-perfect.github.io/2020/03/01/VSCode%E8%B6%85%E7%82%AB%E7%9A%84%E6%8F%92%E4%BB%B6-power-mode/</id>
+    <published>2020-03-01T11:55:40.000Z</published>
+    <updated>2020-03-01T12:34:47.731Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="VSCode" scheme="http://Hao-Perfect.github.io/categories/VSCode/"/>
+    
+    
+      <category term="VSCode" scheme="http://Hao-Perfect.github.io/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>超炫酷的编辑器-Atom</title>
+    <link href="http://hao-perfect.github.io/2020/03/01/%E8%B6%85%E7%82%AB%E9%85%B7%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8-Atom/"/>
+    <id>http://hao-perfect.github.io/2020/03/01/%E8%B6%85%E7%82%AB%E9%85%B7%E7%9A%84%E7%BC%96%E8%BE%91%E5%99%A8-Atom/</id>
+    <published>2020-03-01T08:02:24.000Z</published>
+    <updated>2020-03-01T08:02:24.475Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>萌新深度学习与Pytorch入门记录（一）：Win10下环境安装</title>
