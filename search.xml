@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vs2019 &amp; openmv永久配置</title>
+    <url>/2020/03/04/vs2019-openmv%E6%B0%B8%E4%B9%85%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>最近想了解一下Opencv，又刚好看到一个博主用VS2019配置环境，看着好像流畅度比VS2017好，随把VS2017卸载，安装了VS2019并配置Opencv环境。</p>
+<h4 id="下载Opencv"><a href="#下载Opencv" class="headerlink" title="下载Opencv"></a>下载Opencv</h4><p><a href="https://opencv.org/releases/" target="_blank" rel="noopener">Opencv官网下载</a> ，下载解压后得到如下文件目录。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/解压目录.jpg/Hao"/>
+
+<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><p>把 <code>opencv\build\bin</code>和<code>opencv\build\x64\vc15\bin</code>添加到环境变量中。</p>
+<p>然后打开VS2019创建一个空白项目。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1583318430(1).jpg/Hao"/>
+
+<p>创建完成后，鼠标右键创建好的项目名称，打开属性界面。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304184406.png/Hao"/>
+
+<p>然后打开 VC++ 目录，进入后 有两个地方要修改</p>
+<ol>
+<li>包含目录</li>
+<li>库目录</li>
+</ol>
+<p>我们编辑 包含目录</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304184724.png/Hao"/>
+
+<p>为了让我们的Opencv配置永久生效，我们不直接添加Opencv的库。</p>
+<p>任选一个下面的路径，笔者选择第一个目录，然后复制打开相应的路径。</p>
+<p>然后我们在打开刚才下载的 <code>opencv\build\include</code>，把里面的 <code>opencv2</code>文件复制到该目录。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304185125.png/Hao"/>
+
+<p>然后我们继续打开属性界面的<code>库目录</code>，同样选择第一个路径</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304185315.png/Hao"/>
+
+<p>然后把<code>opencv\build\x64\vc15\lib</code>下的两个文件复制到那个目录下。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304185512.png/Hao"/>
+
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304185655.png/Hao"/>
+
+<p>然后打开 <code>链接器</code> -&gt; <code>输入</code> -&gt; <code>附加依赖项</code></p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304191501.png/Hao"/>
+
+<p>在里面添加 <code>opencv_world420.lib</code> 或者 <code>opencv_world420d.lib</code>，只需要填一个即可</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304191825.png/Hao"/>
+
+<p>带d的对应Debug模式 ，不带d的对应 Release模式。</p>
+<p>新建一个CPP源文件，复制如下代码进行测试。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2\highgui\highgui.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    \\ 记得路径需要 添加两个\\</span><br><span class="line">    Mat img = imread(<span class="string">"D:\\data\\VSC++\\program\\opencv\\Opencv\\pic.jpg"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span></span><br><span class="line">        (img.empty())</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"图像加载失败！"</span></span><br><span class="line">            &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//system("pause");</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">            <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//创建一个名字为MyWindow的窗口</span></span><br><span class="line">    namedWindow(<span class="string">"MyWindow"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在MyWindow的窗中中显示存储在img中的图片</span></span><br><span class="line">    imshow(<span class="string">"MyWindow"</span>, img);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//等待直到有键按下</span></span><br><span class="line">    waitKey(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//销毁MyWindow的窗口</span></span><br><span class="line">    destroyWindow(<span class="string">"MyWindow"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改为 <code>X64</code> 然后 <code>F5</code>，开始调试</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304192744.png/Hao"/>
+
+<p>若没问题及可打开所写路径的图片。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1583321497(1).jpg/Hao"/>
+
+<p>若出现错误，可找到<code>属性管理器中</code>（<code>属性管理器</code>可以在 <code>视图</code>-&gt; <code>其他窗口</code>中打开）</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304221835.png/Hao"/>
+
+<p>然后 选中自己所选择的模式【debug  或者 release】，右键进入  属性  界面</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304222051.png/Hao"/>
+
+<p>然后在 <code>链接器</code> -&gt; <code>输入</code> -&gt; <code>附加依赖项目</code> 添加</p>
+<p> <code>opencv_world420.lib</code> 或者 <code>opencv_world420d.lib</code>，只需要填一个即可。</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/20200304222225.png/Hao"/>
+
+<p>之后运行即可打开图片。</p>
+<p>若出现其他错误，请先按照步骤检查再按照错误查找解决方法。</p>
+<p>之后创建<code>Opencv</code>项目，我们只需要在最后，步骤 在如下步骤修改即可。</p>
+<p>【添加 <code>opencv_world420.lib</code> 或者 <code>opencv_world420d.lib</code>，只需要填一个即可】</p>
+]]></content>
+      <categories>
+        <category>Opencv</category>
+      </categories>
+      <tags>
+        <tag>Opencv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VSCode超炫的插件-power-mode</title>
     <url>/2020/03/01/VSCode%E8%B6%85%E7%82%AB%E7%9A%84%E6%8F%92%E4%BB%B6-power-mode/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>之前看到有个博主发了一个好玩的编辑器，有很多比较炫酷的特效——<code>Atom</code>，后来自己下载了，发现有点大，还有点卡。想到VSCode应该也有相应的插件。所以就搜索了一番找到了<code>power-mode</code>这个插件。</p>

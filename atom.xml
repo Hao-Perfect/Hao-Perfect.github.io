@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-03-01T12:55:09.945Z</updated>
+  <updated>2020-03-04T14:25:49.560Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vs2019 &amp; openmv永久配置</title>
+    <link href="http://hao-perfect.github.io/2020/03/04/vs2019-openmv%E6%B0%B8%E4%B9%85%E9%85%8D%E7%BD%AE/"/>
+    <id>http://hao-perfect.github.io/2020/03/04/vs2019-openmv%E6%B0%B8%E4%B9%85%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-03-04T09:16:49.000Z</published>
+    <updated>2020-03-04T14:25:49.560Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Opencv" scheme="http://Hao-Perfect.github.io/categories/Opencv/"/>
+    
+    
+      <category term="Opencv" scheme="http://Hao-Perfect.github.io/tags/Opencv/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode超炫的插件-power-mode</title>
