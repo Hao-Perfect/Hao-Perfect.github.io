@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python&amp;selenium网站自动打卡签到</title>
+    <url>/2020/03/06/Python-selenium%E7%BD%91%E7%AB%99%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1%E7%AD%BE%E5%88%B0/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>学校为了统计学生的情况，每天需要打卡提交信息，为了偷懒，就查找可以使用的工具。仅记录关键的部分。</p>
+<h2 id="使用工具"><a href="#使用工具" class="headerlink" title="使用工具"></a>使用工具</h2><ol>
+<li>Pycharm + Python</li>
+<li>Selenium包</li>
+<li>Chrome驱动包（笔者使用Charm浏览器，可按情况下载）</li>
+</ol>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h5 id="安装好-Pycharm-配置好-Python"><a href="#安装好-Pycharm-配置好-Python" class="headerlink" title="安装好 Pycharm 配置好 Python"></a>安装好 Pycharm 配置好 Python</h5><h5 id="安装好-Pycharm-配置好-Python-1"><a href="#安装好-Pycharm-配置好-Python-1" class="headerlink" title="安装好 Pycharm 配置好 Python"></a>安装好 Pycharm 配置好 Python</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pip pip install selenium</span><br></pre></td></tr></table></figure>
+
+<h5 id="浏览器驱动下载"><a href="#浏览器驱动下载" class="headerlink" title="浏览器驱动下载"></a>浏览器驱动下载</h5><p><a href="http://chromedriver.storage.googleapis.com/index.html" target="_blank" rel="noopener">Chrome</a>   <a href="https://github.com/mozilla/geckodriver/releases/" target="_blank" rel="noopener">Firefox</a>  <a href="http://selenium-release.storage.googleapis.com/index.html" target="_blank" rel="noopener">IE</a> </p>
+<p>不同的Chrome的版本对应的chromedriver.exe 版本也不一样，下载时不要搞错了。如果是最新的Chrome, 下载最新的chromedriver.exe 就可以了。把chromedriver的路径也加到环境变量里。</p>
+<p>其他浏览器根据自己的操作系统下载对应的驱动即可，并把驱动加入到环境变量里面。</p>
+<h5 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">driver.maximize_window()</span><br><span class="line">driver.find_element_by_xpath(<span class="string">".//*[@id='kw']"</span>).send_keys(<span class="string">"python"</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">".//*[@id='su']"</span>).click()</span><br><span class="line">sleep(<span class="number">2</span>)</span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+
+<h5 id="签到测试代码"><a href="#签到测试代码" class="headerlink" title="签到测试代码"></a>签到测试代码</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">username = <span class="string">"账号邮箱"</span> <span class="comment">#登录账号</span></span><br><span class="line">password = <span class="string">"密码"</span><span class="comment">#登录密码</span></span><br><span class="line">message = <span class="string">"**签到心情内容**"</span>+time.strftime(<span class="string">"%a %b %d %H:%M:%S %Y"</span>, time.localtime())	<span class="comment">#设置签到时间防止签到内容一致</span></span><br><span class="line"></span><br><span class="line">driver = webdriver.Chrome() <span class="comment">#模拟谷歌浏览器打开网站</span></span><br><span class="line">driver.get(<span class="string">"http://www.zuidaima.com/user/login.htm"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="comment">#输入用户名</span></span><br><span class="line">    driver.find_element_by_id(<span class="string">"account"</span>).send_keys(username)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#输入密码</span></span><br><span class="line">    driver.find_element_by_id(<span class="string">"password"</span>).send_keys(password)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#点击登录</span></span><br><span class="line">    driver.find_element_by_id(<span class="string">"login"</span>).click()</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    driver.get(<span class="string">"http://www.zuidaima.com/"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#输入签到信息</span></span><br><span class="line">    driver.find_element_by_id(<span class="string">"mood_input"</span>).send_keys(message)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#完成签到</span></span><br><span class="line">    driver.find_element_by_id(<span class="string">"mood_publish"</span>).click()</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"签到成功"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"签到失败"</span>)</span><br><span class="line">    </span><br><span class="line">driver.quit()</span><br></pre></td></tr></table></figure>
+
+<h5 id="采坑点"><a href="#采坑点" class="headerlink" title="采坑点"></a>采坑点</h5><p>按照以上代码测试没问题，但是笔者学校的网站<code>登录</code>button是没有<code>id</code>属性的，后加入如下代码即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line">buttonXpath =<span class="string">"//button[contains(.,'登录')]"</span></span><br><span class="line"></span><br><span class="line">element = WebDriverWait(driver, <span class="number">10</span>).until(EC.element_to_be_clickable((By.XPATH, buttonXpath)))</span><br><span class="line">element.click()</span><br></pre></td></tr></table></figure>
+
+<p>即使用<code>xpath</code>获取元素，其他使用可参考 <a href="https://selenium-python-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">selenium-Python中文文档</a> </p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://blog.csdn.net/qq_42295733/article/details/87571546" target="_blank" rel="noopener">Python+Selenium实现某网站自动签到</a></p>
+<p><a href="https://selenium-python-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">selenium-Python中文文档</a></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>selenium</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>vs2019 &amp; openmv永久配置</title>
     <url>/2020/03/04/vs2019-openmv%E6%B0%B8%E4%B9%85%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>最近想了解一下Opencv，又刚好看到一个博主用VS2019配置环境，看着好像流畅度比VS2017好，随把VS2017卸载，安装了VS2019并配置Opencv环境。</p>

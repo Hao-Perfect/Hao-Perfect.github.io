@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-03-04T14:25:49.560Z</updated>
+  <updated>2020-03-05T21:19:24.906Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python&amp;selenium网站自动打卡签到</title>
+    <link href="http://hao-perfect.github.io/2020/03/06/Python-selenium%E7%BD%91%E7%AB%99%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1%E7%AD%BE%E5%88%B0/"/>
+    <id>http://hao-perfect.github.io/2020/03/06/Python-selenium%E7%BD%91%E7%AB%99%E8%87%AA%E5%8A%A8%E6%89%93%E5%8D%A1%E7%AD%BE%E5%88%B0/</id>
+    <published>2020-03-05T21:00:01.000Z</published>
+    <updated>2020-03-05T21:19:24.906Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;学校为了统计学生的情况，每天需要打卡提交信息，为了偷懒，就查找可以使用的工具。仅记录关键的部分。&lt;/p&gt;
+&lt;h2 id=&quot;使用工具&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://Hao-Perfect.github.io/categories/python/"/>
+    
+    
+      <category term="selenium" scheme="http://Hao-Perfect.github.io/tags/selenium/"/>
+    
+      <category term="python" scheme="http://Hao-Perfect.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>vs2019 &amp; openmv永久配置</title>
