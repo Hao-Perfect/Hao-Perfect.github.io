@@ -74,7 +74,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="堆栈,内存," />
 
 
 
@@ -87,15 +87,17 @@
 
 
 
-<meta name="description" content="记录美好的学习生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://hao-perfect.github.io/tags/index.html">
+<meta name="description" content="内存分配策略中，堆和栈的区别1. 静态Static指在编译时就能确定的每个数据目标在运行时刻需要的存储空间需求。因而在编译的时候就可以给他们分配固定的存储空间。 这种数据目标在编译时就为他们分配固定的内存. 限制：        代码中不能有可变数据结构，如数组。        代码中不允许有递归或嵌套结构的出现。 2.栈式 Stack栈式存储分配可称为动态存储分配，是由一个类似于堆栈的运行栈来实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内存分配，堆与栈的区别">
+<meta property="og:url" content="http://hao-perfect.github.io/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="Hao-Perfect&#39;s Blog">
-<meta property="og:description" content="记录美好的学习生活">
-<meta property="article:published_time" content="2020-02-16T01:56:18.000Z">
-<meta property="article:modified_time" content="2020-02-26T22:37:50.376Z">
+<meta property="og:description" content="内存分配策略中，堆和栈的区别1. 静态Static指在编译时就能确定的每个数据目标在运行时刻需要的存储空间需求。因而在编译的时候就可以给他们分配固定的存储空间。 这种数据目标在编译时就为他们分配固定的内存. 限制：        代码中不能有可变数据结构，如数组。        代码中不允许有递归或嵌套结构的出现。 2.栈式 Stack栈式存储分配可称为动态存储分配，是由一个类似于堆栈的运行栈来实">
+<meta property="article:published_time" content="2020-03-06T16:38:37.000Z">
+<meta property="article:modified_time" content="2020-03-06T16:39:09.635Z">
 <meta property="article:author" content="Hao_Perfect">
+<meta property="article:tag" content="堆栈">
+<meta property="article:tag" content="内存">
 <meta name="twitter:card" content="summary">
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://Hao-Perfect.github.io/tags/"/>
+  <link rel="canonical" href="http://Hao-Perfect.github.io/2020/03/07/内存分配，堆与栈的区别/"/>
 
 
 
 
 
-  <title>tags | Hao-Perfect's Blog</title>
+  <title>内存分配，堆与栈的区别 | Hao-Perfect's Blog</title>
   
 
 
@@ -302,40 +304,387 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hao_Perfect
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hao-perfect.github.io/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/" title="内存分配，堆与栈的区别">http://hao-perfect.github.io/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
-    <div class="post-block page">
+    </br />
+    </br />
+    
+    <link itemprop="mainEntityOfPage" href="http://Hao-Perfect.github.io/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hao_Perfect">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hao-Perfect's Blog">
+    </span>
+
+    
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 17 个标签
+          <h1 class="post-title" itemprop="name headline">内存分配，堆与栈的区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T00:38:37+08:00">
+                2020-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/" class="leancloud_visitors" data-flag-title="内存分配，堆与栈的区别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span><span>℃</span>
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  8 分钟
+                </span>
+              
             </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Anaconda/" style="font-size: 12px; color: #ccc">Anaconda</a> <a href="/tags/Github%E5%BB%BA%E7%AB%99/" style="font-size: 12px; color: #ccc">Github建站</a> <a href="/tags/Hexo%E5%8D%9A%E5%AE%A2/" style="font-size: 12px; color: #ccc">Hexo博客</a> <a href="/tags/Markdown/" style="font-size: 12px; color: #ccc">Markdown</a> <a href="/tags/Next/" style="font-size: 12px; color: #ccc">Next</a> <a href="/tags/Opencv/" style="font-size: 12px; color: #ccc">Opencv</a> <a href="/tags/Pycharm/" style="font-size: 12px; color: #ccc">Pycharm</a> <a href="/tags/Python/" style="font-size: 12px; color: #ccc">Python</a> <a href="/tags/Pytorch/" style="font-size: 12px; color: #ccc">Pytorch</a> <a href="/tags/VSCode/" style="font-size: 12px; color: #ccc">VSCode</a> <a href="/tags/cuda/" style="font-size: 12px; color: #ccc">cuda</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a> <a href="/tags/selenium/" style="font-size: 12px; color: #ccc">selenium</a> <a href="/tags/%E5%86%85%E5%AD%98/" style="font-size: 12px; color: #ccc">内存</a> <a href="/tags/%E5%A0%86%E6%A0%88/" style="font-size: 12px; color: #ccc">堆栈</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 12px; color: #ccc">深度学习</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 12px; color: #ccc">随笔</a>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h4 id="内存分配策略中，堆和栈的区别"><a href="#内存分配策略中，堆和栈的区别" class="headerlink" title="内存分配策略中，堆和栈的区别"></a>内存分配策略中，堆和栈的区别</h4><h5 id="1-静态Static"><a href="#1-静态Static" class="headerlink" title="1. 静态Static"></a>1. 静态Static</h5><p>指在编译时就能确定的每个数据目标在运行时刻需要的存储空间需求。因而在编译的时候就可以给他们分配固定的存储空间。 这种数据目标在编译时就为他们分配固定的内存.</p>
+<p>限制：<br>        代码中不能有可变数据结构，如数组。<br>        代码中不允许有递归或嵌套结构的出现。</p>
+<h5 id="2-栈式-Stack"><a href="#2-栈式-Stack" class="headerlink" title="2.栈式 Stack"></a>2.栈式 Stack</h5><p>栈式存储分配可称为动态存储分配，是由一个类似于堆栈的运行栈来实现的，和静态存储分配相反，在栈式存储方案中，程序对数据区的需求在编译时是完全未知的，只有到运行的时候才能知道。</p>
+<p>指在编译时不能确定大小，但在运行的时候能够确定，且规定在运行中进入一个程序模块时，就必须知道该模块所需要的数据区大小，才能为其分配内存，和我们在数据结构中所知道的栈一样，内存分配为e栈原则，先进后出的原则进行分配。</p>
+<p>分配是在运行时执行的，但是大小是在编译时确定的；</p>
+<p>特点：<br>        在C/C++中，所有的方法调用都是通过栈来进行的，所有局部变量，形式参数都是从栈中分配内存空间的。</p>
+<h6 id="栈的分配和回收："><a href="#栈的分配和回收：" class="headerlink" title="栈的分配和回收："></a>栈的分配和回收：</h6><blockquote>
+<p>栈分配内存空间：从栈低向栈顶，依次存储；<br>        栈回收内存空间：修改栈顶指针的位置，完成栈中内容销毁，这样的模式速度很快。</p>
+</blockquote>
+<p><strong>栈 :存放基本数据类型，速度快</strong></p>
+<ul>
+<li>栈中主要存放一些基本类型的变量（int, short, long, byte, float, double, boolean, char）和对象句柄；</li>
+<li>栈的存取速度比堆要快；</li>
+<li>栈数据可以共享；</li>
+<li>栈的数据大小与生存期必须是确定的，缺乏灵活性。</li>
+</ul>
+<h4 id="3-堆式-Heap"><a href="#3-堆式-Heap" class="headerlink" title="3.堆式 Heap"></a>3.堆式 Heap</h4><p>指编译时，运行时模块入口都不能确定存储要求的数据结构的内存分配。<br>比如：可变长度的串和对象实例。<br>堆由大片的可利用的块或空闲组成，堆中的内存可以按照任意顺序分配和释放。</p>
+<p>堆是在运行的时候，请求操作系统分配给自己内存，由于从操作系统管理的内存分配，所以在分配和销毁的时候都要占用时间，因此对的效率低下。</p>
+<p>堆的优点：编译时不必知道要从堆里分配多少存储空间，也不必知道存储的数据要在堆里停留多长时间，因此堆存储数据时，灵活性比较大；</p>
+<p>在面向对象编程中，堆是必不可少的，因为面向对象的多态性，多态变量所需的存储空间只有在运行时创建了对象之后才能确定。</p>
+<p><strong>堆: 用new建立，垃圾自动回收负责回收</strong></p>
+<ul>
+<li>堆是一个”运行时”数据区，类实例化的对象就是从堆上去分配空间的；</li>
+<li>在堆上分配空间是通过”new”等指令建立的；</li>
+<li><a href="https://link.jianshu.com/?t=http://lib.csdn.net/base/java" target="_blank" rel="noopener">Java</a>针对堆的操作和C++的区别就是，Java不需要在空间不用的时候来显式的释放；</li>
+<li>Java的堆是由Java的垃圾回收机制来负责处理的，堆是动态分配内存大小，垃圾收集器可以自动回收不再使用的内存空间。</li>
+<li>但缺点是，因为在运行时动态分配内存，所以内存的存取速度较慢。</li>
+</ul>
+<h4 id="4-堆和栈的比较"><a href="#4-堆和栈的比较" class="headerlink" title="4. 堆和栈的比较"></a>4. 堆和栈的比较</h4><table>
+<thead>
+<tr>
+<th>比较方面</th>
+<th>堆</th>
+<th>栈</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能的比较</td>
+<td>存放对象</td>
+<td>执行程序</td>
+</tr>
+<tr>
+<td>存储内容</td>
+<td>new关键字创建的内容</td>
+<td>局部变量，形式参数</td>
+</tr>
+<tr>
+<td>存储速度</td>
+<td>慢</td>
+<td>快（所以用来执行程序）</td>
+</tr>
+</tbody></table>
+<h4 id="5-JVM中的堆栈"><a href="#5-JVM中的堆栈" class="headerlink" title="5.JVM中的堆栈"></a>5.JVM中的堆栈</h4><p>JVM是基于堆栈的虚拟机，JVM中的堆栈是两块不同的存储区域。</p>
+<p>JVM为每个线程程都分配了一个堆和栈，所以对于java程序来说，程序的运行是通过对堆栈的操作来完成的。</p>
+<table>
+<thead>
+<tr>
+<th>JVM 堆</th>
+<th>JVM 栈</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是存储的单位</td>
+<td>是运行时的单位</td>
+</tr>
+<tr>
+<td>JVM堆解决的是数据存储的问题，即数据怎么放、放在哪儿。</td>
+<td>JVM栈解决程序的运行问题，即程序如何执行，或者说如何处理数据;</td>
+</tr>
+<tr>
+<td>JVM堆中存的是对象。</td>
+<td>JVM栈中存的是基本数据类型和JVM堆中对象的引用</td>
+</tr>
+</tbody></table>
+<p>一个对象的大小是不可估计的，或者说是可以动态变化的，但是在JVM栈中，一个对象只对应了一个4btye的引用(JVM堆JVM栈分离的好处：))。</p>
+<p><strong><em>为什么不把基本类型放JVM堆中呢?\</em></strong><br>因为基本类型其占用的空间一般是1~8个字节（<strong><em>需要空间比较少\</em></strong>），而且因为是基本类型，所以不会出现动态增长的情况（<strong><em>长度固定\</em></strong>），因此JVM栈中存储就够了，如果把他存在JVM堆中是没有什么意义的(还会浪费空间，后面说明)。可以这么说，基本类型和对象的引用都是存放在JVM栈中，而且都是几个字节的一个数，因此在程序运行时，他们的处理方式是统一的。</p>
+<p>但是基本类型、对象引用和对象本身就有所区别了，因为一个是JVM栈中的数据一个是JVM堆中的数据的引用。最常见的一个问题就是，Java中参数传递时的问题。</p>
+<p><strong>JAVA中堆栈的应用</strong></p>
+<p><strong><em>Java中的参数传递时传值呢?还是传引用?\</em></strong></p>
+<blockquote>
+<p>要说明这个问题，先要明确两点：<br>1.不要试图与C进行类比，Java中没有指针的概念<br>2.程序运行永远都是在JVM栈中进行的，因而参数传递时，只存在传递基本类型和对象引用的问题，不会直接传对象本身。</p>
+<p><strong>总结：传递的是对象的引用值或是基本类型的值；</strong></p>
+</blockquote>
+<p>明确以上两点后。Java在方法调用传递参数时，因为没有指针，所以它都是进行传值调用(这点可以参考C的传值调用)。因此，很多书里面都说Java是进行传值调用，这点没有问题，而且也简化的C中复杂性。</p>
+<p><strong><em>但是传引用的错觉是如何造成的呢?\</em></strong><br>在运行JVM栈中，基本类型和引用的处理是一样的，都是传值，所以，如果是传引用的方法调用，也同时可以理解为“传引用值”的传值调用，即引用的处理跟基本类型是完全一样的。但是当进入被调用方法时，被传递的这个引用的值，被程序解释(或者查找)到JVM堆中的对象，这个时候才对应到真正的对象。如果此时进行修改，修改的是引用对应的对象，而不是引用本身，即：修改的是JVM堆中的数据。所以这个修改是可以保持的了。</p>
+<p>对象，从某种意义上说，是由基本类型组成的。可以把一个对象看作为一棵树，对象的属性如果还是对象，则还是一颗树(即非叶子节点)，基本类型则为树的叶子节点。程序参数传递时，被传递的值本身都是不能进行修改的，但是，如果这个值是一个非叶子节点(即一个对象引用)，则可以修改这个节点下面的所有内容。</p>
+<p>JVM堆和JVM栈中，JVM栈是程序运行最根本的东西。程序运行可以没有JVM堆，但是不能没有JVM栈。而JVM堆是为JVM栈进行数据存储服务，说白了JVM堆就是一块共享的内存。不过，正是因为JVM堆和JVM栈的分离的思想，才使得Java的垃圾回收成为可能。</p>
+<p><strong><em>JVM中线程堆栈\</em></strong><br>线程(thread),有时被称为轻量级进程(Lightweight Process，LWP)，是程序执行流的最小单元。一个标准的线程由线程ID，当前指令指针(PC)，寄存器集合和堆栈组成。另外，线程是进程中的一个实体，是被系统独立调度和分派的基本单位，线程自己不拥有系统资源，只拥有一点在运行中必不可少的资源，但它可与同属一个进程的其它线程共享进程所拥有的全部资源。一个线程可以创建和撤消另一个线程，同一进程中的多个线程之间可以并发执行。由于线程之间的相互制约，致使线程在运行中呈现出间断性。线程也有就绪、阻塞和运行三种基本状态。　　线程是程序中一个单一的顺序控制流程.在单个程序中同时运行多个线程完成不同的工作,称为多线程。</p>
+<p><strong><em>1、线程与进程\</em></strong><br>线程和进程的区别在于,子进程和父进程有不同的代码和数据空间,而多个线程则共享数据空间,每个线程有自己的执行堆栈和程序计数器为其执行上下文.多线程主要是为了节约CPU时间,发挥利用,根据具体情况而定. 线程的运行中需要使用计算机的内存资源和CPU</p>
+<p>通常在一个进程中可以包含若干个线程，它们可以利用进程所拥有的资源。在引入线程的操作系统中，通常都是把进程作为分配资源的基本单位，而把线程作为独立运行和独立调度的基本单位。由于线程比进程更小，基本上不拥有系统资源，故对它的调度所付出的开销就会小得多，能更高效的提高系统内多个程序间并发执行的程度。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/WeChat Pay.jpg" alt="Hao_Perfect 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/Alipay.jpg" alt="Hao_Perfect 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hao_Perfect
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hao-perfect.github.io/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/" title="内存分配，堆与栈的区别">http://hao-perfect.github.io/2020/03/07/%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%EF%BC%8C%E5%A0%86%E4%B8%8E%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%A0%86%E6%A0%88/" rel="tag"># 堆栈</a>
+          
+            <a href="/tags/%E5%86%85%E5%AD%98/" rel="tag"># 内存</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/06/Markdown%E8%BF%9B%E9%98%B6/" rel="next" title="Markdown进阶">
+                <i class="fa fa-chevron-left"></i> Markdown进阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -368,8 +717,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,6 +811,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#内存分配策略中，堆和栈的区别"><span class="nav-number">1.</span> <span class="nav-text">内存分配策略中，堆和栈的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-静态Static"><span class="nav-number">1.1.</span> <span class="nav-text">1. 静态Static</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-栈式-Stack"><span class="nav-number">1.2.</span> <span class="nav-text">2.栈式 Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#栈的分配和回收："><span class="nav-number">1.2.1.</span> <span class="nav-text">栈的分配和回收：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-堆式-Heap"><span class="nav-number">2.</span> <span class="nav-text">3.堆式 Heap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-堆和栈的比较"><span class="nav-number">3.</span> <span class="nav-text">4. 堆和栈的比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-JVM中的堆栈"><span class="nav-number">4.</span> <span class="nav-text">5.JVM中的堆栈</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
