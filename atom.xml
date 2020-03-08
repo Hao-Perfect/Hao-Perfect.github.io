@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hao-perfect.github.io/"/>
-  <updated>2020-03-06T16:39:09.635Z</updated>
+  <updated>2020-03-08T17:58:45.957Z</updated>
   <id>http://hao-perfect.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenCV学习记录</title>
+    <link href="http://hao-perfect.github.io/2020/03/09/OpenCV%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    <id>http://hao-perfect.github.io/2020/03/09/OpenCV%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</id>
+    <published>2020-03-08T17:59:15.733Z</published>
+    <updated>2020-03-08T17:58:45.957Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h2&gt;&lt;p&gt;复习C++顺便学习Opencv&lt;/p&gt;
+&lt;h3 id=&quot;记录&quot;&gt;&lt;a href=&quot;#记录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>内存分配，堆与栈的区别</title>
