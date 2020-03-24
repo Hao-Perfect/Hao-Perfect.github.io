@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hao-Perfect's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="C++复习笔记（一）函数的默认参数函数的默认参数 ​    注意事项 ​    1. 函数的默认参数，在 函数原型 或 定义中给出，不能在两个位置同时出现。 ​    2. 对于带参数列表的函数，必须是从右到左添加默认参数。  函数重载函数重载（ overloading ） 1. 指可以有多个同名的函数 2. 函数名相同，参数列表不同特征标 ​    重载-编译器在编译时，根据参数列表对函数进行重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++复习笔记（一）">
+<meta property="og:url" content="http://hao-perfect.github.io/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hao-Perfect&#39;s Blog">
+<meta property="og:description" content="C++复习笔记（一）函数的默认参数函数的默认参数 ​    注意事项 ​    1. 函数的默认参数，在 函数原型 或 定义中给出，不能在两个位置同时出现。 ​    2. 对于带参数列表的函数，必须是从右到左添加默认参数。  函数重载函数重载（ overloading ） 1. 指可以有多个同名的函数 2. 函数名相同，参数列表不同特征标 ​    重载-编译器在编译时，根据参数列表对函数进行重">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584892852(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584894780(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584904839.jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584905227(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584909896(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584911271(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584911428(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584916510(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585031829(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585071863(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585072437(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585072792(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073071(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073401(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073533(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073862(1).jpg">
+<meta property="og:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585074033(1).jpg">
+<meta property="article:published_time" content="2020-03-24T19:09:56.481Z">
+<meta property="article:modified_time" content="2020-03-24T19:09:38.642Z">
+<meta property="article:author" content="Hao_Perfect">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584892852(1).jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://Hao-Perfect.github.io/2020/03/25/C++复习笔记（一）/"/>
+
+
+
+
+
+  <title>C++复习笔记（一） | Hao-Perfect's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?643981913ae298999b81b57951f0d16f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Hao-Perfect" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hao-Perfect's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎来到小豪的空间</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hao_Perfect
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hao-perfect.github.io/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="C++复习笔记（一）">http://hao-perfect.github.io/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+    </br />
+    </br />
+    
+    <link itemprop="mainEntityOfPage" href="http://Hao-Perfect.github.io/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hao_Perfect">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hao-Perfect's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">C++复习笔记（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T03:09:56+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="C++复习笔记（一）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span><span>℃</span>
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.3k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="C-复习笔记（一）"><a href="#C-复习笔记（一）" class="headerlink" title="C++复习笔记（一）"></a>C++复习笔记（一）</h2><h3 id="函数的默认参数"><a href="#函数的默认参数" class="headerlink" title="函数的默认参数"></a>函数的默认参数</h3><p>函数的默认参数</p>
+<p>​    注意事项</p>
+<p>​    1. 函数的默认参数，在 函数原型 或 定义中给出，不能在两个位置同时出现。</p>
+<p>​    2. 对于带参数列表的函数，必须是从右到左添加默认参数。</p>
+<p><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584892852(1).jpg" alt=""></p>
+<h3 id="函数重载"><a href="#函数重载" class="headerlink" title="函数重载"></a>函数重载</h3><p>函数重载（ overloading ）</p>
+<pre><code>1. 指可以有多个同名的函数
+2. 函数名相同，参数列表不同</code></pre><p>特征标</p>
+<p>​    重载-编译器在编译时，根据参数列表对函数进行重命名</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line">	编译时，Swap_int_int</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">float</span> a, <span class="keyword">float</span> b)</span></span></span><br><span class="line">	编译时,Swap_float_float</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(<span class="keyword">int</span>&amp; a, <span class="keyword">int</span>&amp; b)</span></span></span><br><span class="line">	编译时，Swap_int_int</span><br><span class="line">引用类型<span class="keyword">int</span> 发生冲突。</span><br><span class="line">    重载决议</span><br></pre></td></tr></table></figure>
+
+<p>为了避免混乱，编译器把类型引用和类型本身视为同一个特征标。</p>
+<p><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584894780(1).jpg" alt=""></p>
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">// 重载后，只要添加所需要的功能函数，即可给原来的函数增加功能。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//重载：函数名相同， 参数列表（特征标）不同</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(<span class="keyword">int</span>[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(<span class="keyword">float</span>[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(<span class="keyword">double</span>[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(<span class="keyword">int</span>[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(<span class="keyword">float</span>[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(<span class="keyword">double</span>[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 使用重载实现数组的排序</span></span><br><span class="line">	<span class="keyword">int</span> iNums[] = &#123; <span class="number">56</span>, <span class="number">54</span>,<span class="number">12</span>,<span class="number">89</span>, <span class="number">43</span> &#125;;</span><br><span class="line">	<span class="keyword">float</span> fNums[] = &#123; <span class="number">78.0f</span>, <span class="number">5.7f</span>, <span class="number">42.8f</span>, <span class="number">99.1f</span> &#125;;</span><br><span class="line">	<span class="keyword">double</span> dNums[] = &#123; <span class="number">78.9</span>, <span class="number">23.6</span>, <span class="number">77.8</span>, <span class="number">98.5</span>, <span class="number">33.3</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//排序前</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"排序前"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	Show(iNums, <span class="keyword">sizeof</span>(iNums) / <span class="keyword">sizeof</span>(iNums[<span class="number">0</span>]));</span><br><span class="line">	Show(fNums, <span class="keyword">sizeof</span>(fNums) / <span class="keyword">sizeof</span>(fNums[<span class="number">0</span>]));</span><br><span class="line">	Show(dNums, <span class="keyword">sizeof</span>(dNums) / <span class="keyword">sizeof</span>(dNums[<span class="number">0</span>]));</span><br><span class="line">	<span class="comment">//排序后</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"排序后"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	Sort(iNums, <span class="keyword">sizeof</span>(iNums) / <span class="keyword">sizeof</span>(iNums[<span class="number">0</span>]));</span><br><span class="line">	Show(iNums, <span class="keyword">sizeof</span>(iNums) / <span class="keyword">sizeof</span>(iNums[<span class="number">0</span>]));</span><br><span class="line"></span><br><span class="line">	Sort(fNums, <span class="keyword">sizeof</span>(fNums) / <span class="keyword">sizeof</span>(fNums[<span class="number">0</span>]));</span><br><span class="line">	Show(fNums, <span class="keyword">sizeof</span>(fNums) / <span class="keyword">sizeof</span>(fNums[<span class="number">0</span>]));</span><br><span class="line"></span><br><span class="line">	Sort(dNums, <span class="keyword">sizeof</span>(dNums) / <span class="keyword">sizeof</span>(dNums[<span class="number">0</span>]));</span><br><span class="line">	Show(dNums, <span class="keyword">sizeof</span>(dNums) / <span class="keyword">sizeof</span>(dNums[<span class="number">0</span>]));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(<span class="keyword">int</span> nums[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = nums[j];</span><br><span class="line">				nums[j] = nums[j + <span class="number">1</span>];</span><br><span class="line">				nums[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">	</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(<span class="keyword">float</span> nums[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> temp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = nums[j];</span><br><span class="line">				nums[j] = nums[j + <span class="number">1</span>];</span><br><span class="line">				nums[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(<span class="keyword">double</span> nums[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> temp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[j] &gt; nums[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = nums[j];</span><br><span class="line">				nums[j] = nums[j + <span class="number">1</span>];</span><br><span class="line">				nums[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(<span class="keyword">int</span> nums[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; nums[i] &lt;&lt; <span class="string">","</span> &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(<span class="keyword">float</span> nums[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt;  nums[i] &lt;&lt; <span class="string">","</span> &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(<span class="keyword">double</span> nums[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; nums[i] &lt;&lt; <span class="string">","</span> &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="函数模板-Function-Template"><a href="#函数模板-Function-Template" class="headerlink" title="函数模板(Function Template)"></a>函数模板(Function Template)</h3><p>函数模板，建立一个<font color=red>通用的函数</font></p>
+<ol>
+<li>函数定义时，不指定具体的数据类型（使用虚拟类型代替）</li>
+<li>函数被调用时，编译器根据实参反推数据类型 - 类型的参数化</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模板头 与 函数声明/定义 永远是不可分割的整体！</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">templat &lt;typename 类型1，typename 类型2，……&gt;</span></span><br><span class="line"><span class="comment">返回类型 函数名（形参列表）</span></span><br><span class="line"><span class="comment">｛</span></span><br><span class="line"><span class="comment">	//在函数体中可以使用类型参数</span></span><br><span class="line"><span class="comment">｝</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//函数生命</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T&amp;, T&amp;)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 使用模板技术实现变量交换值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">//模板头</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T &amp;A, T &amp;b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    T temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b =temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//书写函数模板</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">void</span> <span class="title">Sort</span><span class="params">(T tArray[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">void</span> <span class="title">Show</span><span class="params">(T tArray[], <span class="keyword">int</span> len)</span></span>;</span><br><span class="line"><span class="comment">//早期写法 template&lt;class T&gt; </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 函数模板实现数组的排序</span></span><br><span class="line">	<span class="keyword">int</span> iNums[] = &#123; <span class="number">56</span>, <span class="number">54</span>,<span class="number">12</span>,<span class="number">89</span>, <span class="number">43</span> &#125;;</span><br><span class="line">	<span class="keyword">float</span> fNums[] = &#123; <span class="number">78.0f</span>, <span class="number">5.7f</span>, <span class="number">42.8f</span>, <span class="number">99.1f</span> &#125;;</span><br><span class="line">	<span class="keyword">double</span> dNums[] = &#123; <span class="number">78.9</span>, <span class="number">23.6</span>, <span class="number">77.8</span>, <span class="number">98.5</span>, <span class="number">33.3</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//排序前</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"排序前"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	Show(iNums, <span class="keyword">sizeof</span>(iNums) / <span class="keyword">sizeof</span>(iNums[<span class="number">0</span>]));</span><br><span class="line">	Show(fNums, <span class="keyword">sizeof</span>(fNums) / <span class="keyword">sizeof</span>(fNums[<span class="number">0</span>]));</span><br><span class="line">	Show(dNums, <span class="keyword">sizeof</span>(dNums) / <span class="keyword">sizeof</span>(dNums[<span class="number">0</span>]));</span><br><span class="line">	<span class="comment">//排序后</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"排序后"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	Sort(iNums, <span class="keyword">sizeof</span>(iNums) / <span class="keyword">sizeof</span>(iNums[<span class="number">0</span>]));</span><br><span class="line">	Show(iNums, <span class="keyword">sizeof</span>(iNums) / <span class="keyword">sizeof</span>(iNums[<span class="number">0</span>]));</span><br><span class="line"></span><br><span class="line">	Sort(fNums, <span class="keyword">sizeof</span>(fNums) / <span class="keyword">sizeof</span>(fNums[<span class="number">0</span>]));</span><br><span class="line">	Show(fNums, <span class="keyword">sizeof</span>(fNums) / <span class="keyword">sizeof</span>(fNums[<span class="number">0</span>]));</span><br><span class="line"></span><br><span class="line">	Sort(dNums, <span class="keyword">sizeof</span>(dNums) / <span class="keyword">sizeof</span>(dNums[<span class="number">0</span>]));</span><br><span class="line">	Show(dNums, <span class="keyword">sizeof</span>(dNums) / <span class="keyword">sizeof</span>(dNums[<span class="number">0</span>]));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sort</span><span class="params">(T tArray[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	T temp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (tArray[j] &gt; tArray[j + <span class="number">1</span>])</span><br><span class="line">			&#123;</span><br><span class="line">				temp = tArray[j];</span><br><span class="line">				tArray[j] = tArray[j + <span class="number">1</span>];</span><br><span class="line">				tArray[j + <span class="number">1</span>] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Show</span><span class="params">(T tArray[], <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; tArray[i] &lt;&lt; <span class="string">","</span> &lt;&lt; <span class="string">'\t'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p>目录：</p>
+<pre><code>1. 面向对对象编程   &lt;font color=red&gt; 难点&lt;/font&gt; 
+ 2. 类和对象
+ 3. 类的成员变量 
+ 4. 访问修饰符
+ 5. 构造与析构函数  &lt;font color=red&gt; 重点&lt;/font&gt; 
+ 6. this 指针              &lt;font color=red&gt; 重点&lt;/font&gt; </code></pre><h4 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h4><p><strong>何为面向对象？</strong> </p>
+<p>所谓面向对象就是基于对象概念，以对象为中心，以类和继承为构造机制，来认识、理解、<br>刻画 客观世界 和 设计、构建相应的软件系统（模拟现实）</p>
+<ol>
+<li>对象是由数据和容许的操作组成的封装体，与客观实体有直接对应关系</li>
+<li>面向对象不是某一种语言的特性，而是一种编程思想</li>
+</ol>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584904839.jpg"/>
+
+<h4 id="抽象和类"><a href="#抽象和类" class="headerlink" title="抽象和类"></a>抽象和类</h4><p><strong>抽象</strong>：从具体事务抽取共同的本质特征</p>
+<p>C++中的类</p>
+<p>​    类是一种将抽象转换为用户定义类型的工具</p>
+<p>​    将 数据表示 和 操纵数据 的方法组合成一个整体</p>
+<p>​    类的实例称为 对象</p>
+<p>​    类中的变量和函数称为成员</p>
+<p>​    类是对象的模板</p>
+<h4 id="类的声明和使用"><a href="#类的声明和使用" class="headerlink" title="类的声明和使用"></a>类的声明和使用</h4><h5 id="类的声明"><a href="#类的声明" class="headerlink" title="类的声明"></a>类的声明</h5><p>使用 class / struct 关键字声明类型</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584905227(1).jpg"/>
+
+
+
+
+
+
+
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*----头文件----*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __LANDOVERV1_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __LANDOVERV1_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandOverV1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="built_in">string</span> name;	<span class="comment">//地主的名称</span></span><br><span class="line">		<span class="keyword">long</span> score;		<span class="comment">//地主的积分</span></span><br><span class="line">		<span class="keyword">int</span> cards[<span class="number">20</span>];	<span class="comment">//地主的手牌数组</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		LandOverV1();  <span class="comment">// 构造函数的声明</span></span><br><span class="line">		<span class="comment">//~LandOverV1(); //析构函数的声明</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">TouchCard</span><span class="params">(<span class="keyword">int</span> cardCount)</span></span>; <span class="comment">//声明摸牌的方法</span></span><br><span class="line">		<span class="function"><span class="keyword">void</span> <span class="title">ShowScor</span><span class="params">()</span></span>;			   <span class="comment">// 声明积分方法</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// !</span></span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*----cpp文件----*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"LandOverV1.h"</span></span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*	.hpp 文件一般包含实现的内联函数，通常用于模板类 这种声明与实现共存的情况</span></span><br><span class="line"><span class="comment">*  建议： 只要不是纯模板，一律使用.h作为头文件后缀，使用.cpp文件作为函数的实现文件</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">LandOverV1::LandOverV1()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LandOverV1::TouchCard</span><span class="params">(<span class="keyword">int</span> cardCount)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="string">"摸了"</span> &lt;&lt; cardCount &lt;&lt; <span class="string">"张牌"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LandOverV1::ShowScor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="string">"当前的积分为:"</span> &lt;&lt; score &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"LandOverV1.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 数据类型 变量名;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	LandOverV1 landOwner1; <span class="comment">//声明了一个</span></span><br><span class="line">	landOwner1.TouchCard(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><p>*<em>常见访问修饰符 *</em></p>
+<p>​    <font color = blue>public : 修饰的成员在任意地方都可以访问</font></p>
+<p>​    <font color = blue>private: 修饰的成员只能在类中活在友元函数中可以访问</font></p>
+<p>​    <font color = blue>修饰的成员可以在类中函数、子类函数及友元函数中访问</font></p>
+<p><strong>修饰成员</strong></p>
+<p>​    <font color = blue>将修饰关键字放置在类定义的大括号中，添加冒号</font></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名&#123;</span></span><br><span class="line">	修饰符：</span><br><span class="line">		成员列表;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LandOwner</span>&#123;</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    	<span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    	<span class="function"><span class="keyword">void</span> <span class="title">PlayCard</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584909896(1).jpg"/>
+
+<p>对 private 修饰的变量进行操作时，可以通过 public 方法。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">LandOwner::SetName</span><span class="params">(<span class="built_in">string</span> sname)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	name = sname;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><p><strong>构造函数</strong></p>
+<p>​    以类名作为函数名</p>
+<p>​    无返回值类型</p>
+<p><strong>作用</strong></p>
+<p>​    初始化对象的数据成员。</p>
+<p>​    类对象被创建时，编译器为对象分配内存空间，并自动调用构造函数以完成成员的初始化。</p>
+<p><strong>构造函数的种类</strong></p>
+<p>​    无参构造</p>
+<p>​    一般构造（重载构造）</p>
+<p>​    拷贝构造</p>
+<ol>
+<li>如果创建的类 中未书写任何构造函数，系统会自动生成默认的无参构造函数（函数为空）</li>
+<li>如果书写了构造函数，系统就不会再自动生成默认构造；如果希望有一个这样的无参构造函数，需要自己书写。</li>
+</ol>
+<p>无参构造  示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">LandOverV1::LandOverV1()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//cout &lt;&lt; "无参数构造函数的调用" &lt;&lt; endl;  //创建实例的时候调用。</span></span><br><span class="line">	<span class="comment">//一般使用构造函数对成员变量进行初始化;</span></span><br><span class="line">	name = <span class="string">"默认地主"</span>;</span><br><span class="line">	score = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//将用户的手牌数组初始化为0</span></span><br><span class="line">	<span class="built_in">memset</span>(cards, <span class="number">0</span>, <span class="keyword">sizeof</span>(cards));</span><br><span class="line"></span><br><span class="line">	<span class="comment">//打印初始化参数</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"姓名:"</span> &lt;&lt; name &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"积分:"</span> &lt;&lt; score &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"手牌参数:"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">sizeof</span>(cards) / <span class="keyword">sizeof</span>(cards[<span class="number">0</span>]); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; cards[i] &lt;&lt; <span class="string">"，"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"LandOverV1.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 数据类型 变量名;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	LandOverV1 landOwner1; <span class="comment">//声明了一个</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584911271(1).jpg" width=700/>
+
+<p>有参构造 </p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584911428(1).jpg"/>
+
+<p>构造函数的重载与普通函数的重载相同</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Student::Student(<span class="built_in">string</span> name, <span class="keyword">int</span> age)</span><br><span class="line">&#123;</span><br><span class="line">	_name = name;</span><br><span class="line">	_age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Student::Student(<span class="built_in">string</span> name, <span class="keyword">int</span> age) : _name(name), _age(age)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Student* stu = <span class="keyword">new</span> Student(<span class="string">"杰克马"</span>, <span class="string">"悔创阿里"</span>);</span><br><span class="line">stu - &gt; ShowInfo();</span><br></pre></td></tr></table></figure>
+
+<h4 id="栈内存-与-堆内存"><a href="#栈内存-与-堆内存" class="headerlink" title="栈内存 与 堆内存"></a>栈内存 与 堆内存</h4><h4 id="析构函数"><a href="#析构函数" class="headerlink" title="析构函数"></a>析构函数</h4><p>对象过期时，自动调用的特殊成员函数</p>
+<p>析构函数 一般用来完成清理工作</p>
+<p>析构函数的名称是在类名前加 <font color=red>~</font></p>
+<p>​    析构函数没有参数，只有一个</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~Studne()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">delete</span> scores;  <span class="comment">//释放资源</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<ol>
+<li>析构函数是用来释放对象使用的资源，并销毁对象的非static数据成员</li>
+<li>无论何时一个对象被销毁，都会自动调用其析构函数（隐式析构）</li>
+</ol>
+<h4 id="使用类创建对象"><a href="#使用类创建对象" class="headerlink" title="使用类创建对象"></a>使用类创建对象</h4><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584916510(1).jpg"/>
+
+<h4 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h4><p>this指针</p>
+<p>每个成员函数（包括构造和析构）都有一个this指针</p>
+<p>this 指针指向调用对象，即 可以通过 this 关键字访问当前对象的成员</p>
+<ol>
+<li><p>访问成员变量</p>
+<p> this -&gt; 成员名;</p>
+</li>
+<li><p>访问成员函数</p>
+<p> this -&gt; 函数名（）;</p>
+ <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::AddScores</span><span class="params">(<span class="keyword">float</span> score)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">this</span>-&gt;_scores[<span class="keyword">this</span>-&gt;_scorecount - <span class="number">1</span>] = score;</span><br><span class="line">	<span class="comment">//1.创建一个新数组，分配scorecount + 1 个空间</span></span><br><span class="line">	<span class="comment">//2.复制原数组中的内容到新数组中</span></span><br><span class="line">	<span class="comment">//3.scorecount++</span></span><br><span class="line">	<span class="comment">//4.scores指向一个新数组</span></span><br><span class="line">	_scorecount++;</span><br><span class="line">	<span class="keyword">float</span>* newScores = <span class="keyword">new</span> <span class="keyword">float</span>[_scorecount];</span><br><span class="line">	<span class="keyword">float</span>* oldScores = _scores;</span><br><span class="line">	<span class="built_in">memcpy</span>(newScores, _scores, <span class="keyword">sizeof</span>(<span class="keyword">float</span>) * _scorecount);</span><br><span class="line">	</span><br><span class="line">	_scores = newScores;</span><br><span class="line">	<span class="keyword">delete</span> oldScores;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Student::ShowInfo</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="keyword">this</span>-&gt;_name &lt;&lt; <span class="string">"的成绩如下:"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _scorecount - <span class="number">1</span> ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="keyword">this</span>-&gt;_scores[i] &lt;&lt; <span class="string">"\t"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Myshow</span><span class="params">(<span class="keyword">const</span> Student* thiz)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//this 在C++ 是函数里隐含第一个参数!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<pre><code>&lt;img src=&quot;https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1584922415(1).jpg&quot;/&gt;
+
+只有在类的非静态成员函数中才可以使用this指针，其他的任何函数都不可以。
+
+this 可以用来返回当前对象的引用。
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function">Student&amp;<span class="title">addScore</span><span class="params">(<span class="keyword">int</span> score)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Student&amp; <span class="title">Student::addScore</span><span class="params">(<span class="keyword">int</span> score)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">this</span> -&gt; score = <span class="keyword">this</span>-&gt;score + score;</span><br><span class="line">	<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;c</span><br></pre></td></tr></table></figure></code></pre><p>使用 this 返回当前对象的引用：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 返回学霸对象</span></span><br><span class="line"><span class="comment">* otherStu 要对比的另一个学生对象</span></span><br><span class="line"><span class="comment">* return 返回总分比较大的那个学生对象</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">Student&amp; <span class="title">Student::GetSuperScholar</span><span class="params">(Student&amp; otherstu)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//分别计算两个学生的总分</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">this</span>-&gt;GetTotal() &gt; otherstu.GetTotal())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>; <span class="comment">//返回对象的应用</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> otherstu;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">Student::GetTotal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">float</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _scorecount - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum += _scores[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*此处应该是 &amp;引用类型 ，不然会被析构函数多次释放，发生错误*/</span></span><br><span class="line">Student&amp; scholar0 = stu0.GetSuperScholar(*stu);</span><br><span class="line">Student&amp; scholar = stu-&gt;GetSuperScholar(stu0);</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"学霸是:"</span> &lt;&lt; scholar.GetName() &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"学霸是:"</span> &lt;&lt; scholar0.GetName() &lt;&lt; <span class="string">"\t"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用类"><a href="#使用类" class="headerlink" title="使用类"></a>使用类</h3><p>章节内容：</p>
+<ol>
+<li>运算符重载  <font color=red> 重点</font>  <font color=red> 难点</font></li>
+<li>友元函数</li>
+<li>一元运算符重载</li>
+<li>重载 &lt;&lt; 运算符   <font color=red> 重点</font> </li>
+<li>类的自动转换和强制类型转换</li>
+</ol>
+<h4 id="运算符重载（Operator-Overloading）"><a href="#运算符重载（Operator-Overloading）" class="headerlink" title="运算符重载（Operator Overloading）"></a>运算符重载（Operator Overloading）</h4><p>运算符重载就是“想法转换” ， 它的目标是简化函数调用的方式</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585031829(1).jpg"/>
+
+<p>示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*---- Integer.h----*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __INTEGER_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __INTEGER_H__</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//自己定义的整型类，将整型封装成类，以便实现面向对象的封装</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Integer</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Integer();</span><br><span class="line">	Integer(<span class="keyword">int</span> value) : m_value(value) &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//重载+运算符</span></span><br><span class="line">	Integer <span class="keyword">operator</span>+(Integer other);</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//重载-运算符</span></span><br><span class="line">	Integer <span class="keyword">operator</span>-(Integer other);</span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Intvalue</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> m_value;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">virtual</span> ~Integer();</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> m_value; <span class="comment">//实际的整型数字（member）</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// ! </span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*---- Integer.cpp----*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Integer.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//调用默认构造时，会为私有m_value赋一个默认值为0</span></span><br><span class="line">Integer::Integer() : m_value(<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Integer::~Integer()</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//重载+运算符</span></span><br><span class="line">Integer Integer::<span class="keyword">operator</span>+(Integer other)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="function">Integer <span class="title">result</span><span class="params">(<span class="keyword">this</span>-&gt;m_value + other.m_value)</span></span>;  <span class="comment">//用来返回加法的结果对象</span></span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//重载-运算符</span></span><br><span class="line">Integer Integer::<span class="keyword">operator</span>-(Integer other)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="function">Integer <span class="title">result</span><span class="params">(<span class="keyword">this</span>-&gt;m_value - other.m_value)</span></span>;  <span class="comment">//用来返回加法的结果对象</span></span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*---- main.cpp ----*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Integer.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Integer_test</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Integer_test();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Integer_test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Integer int1(1024), int2(2048), int3;</span><br><span class="line">	int3 = int1 + int2;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"int3 = int1 + int2 =  "</span> &lt;&lt; int3.Intvalue() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	int3 = int1 - int2;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"int3 = int1 - int2 =  "</span> &lt;&lt; int3.Intvalue() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585071863(1).jpg"/>
+
+<p>const的用法：</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585072437(1).jpg"/>
+
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585072792(1).jpg"/>
+
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073071(1).jpg"/>
+
+
+
+<p>可以重载的运算符</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073401(1).jpg"/>
+
+<p>不能被重载的运算符</p>
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073533(1).jpg"/>
+
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585073862(1).jpg"/>
+
+<img src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/1585074033(1).jpg"/>
+
+
+
+<h3 id="C-继承"><a href="#C-继承" class="headerlink" title="C++继承"></a>C++继承</h3><p>继承允许通过另一个类 来定义一个类，创建类时，不需要重新编写新的数据成员和成员函数，只需要指定新建的类继承一个已有的类的成员即可。这个已有的类成为 <strong>基类</strong>，新建的类 为 <strong>派生类</strong></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>链接：<a href="https://www.bilibili.com/video/av9468549?p=88" target="_blank" rel="noopener">老九C++</a> </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/WeChat Pay.jpg" alt="Hao_Perfect 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/Alipay.jpg" alt="Hao_Perfect 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hao_Perfect
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hao-perfect.github.io/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" title="C++复习笔记（一）">http://hao-perfect.github.io/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/09/OpenCV%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="next" title="OpenCV学习记录">
+                <i class="fa fa-chevron-left"></i> OpenCV学习记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/Photo.jpg"
+                alt="Hao_Perfect" />
+            
+              <p class="site-author-name" itemprop="name">Hao_Perfect</p>
+              <p class="site-description motion-element" itemprop="description">记录美好的学习生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Hao-Perfect" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=167870&auto=1&height=66"></iframe>
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-复习笔记（一）"><span class="nav-number">1.</span> <span class="nav-text">C++复习笔记（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的默认参数"><span class="nav-number">1.1.</span> <span class="nav-text">函数的默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数重载"><span class="nav-number">1.2.</span> <span class="nav-text">函数重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数模板-Function-Template"><span class="nav-number">1.3.</span> <span class="nav-text">函数模板(Function Template)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象"><span class="nav-number">1.4.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.4.1.</span> <span class="nav-text">面向对象编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象和类"><span class="nav-number">1.4.2.</span> <span class="nav-text">抽象和类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的声明和使用"><span class="nav-number">1.4.3.</span> <span class="nav-text">类的声明和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类的声明"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">类的声明</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问修饰符"><span class="nav-number">1.4.4.</span> <span class="nav-text">访问修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">1.4.5.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈内存-与-堆内存"><span class="nav-number">1.4.6.</span> <span class="nav-text">栈内存 与 堆内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#析构函数"><span class="nav-number">1.4.7.</span> <span class="nav-text">析构函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用类创建对象"><span class="nav-number">1.4.8.</span> <span class="nav-text">使用类创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-关键字"><span class="nav-number">1.4.9.</span> <span class="nav-text">this 关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用类"><span class="nav-number">1.5.</span> <span class="nav-text">使用类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符重载（Operator-Overloading）"><span class="nav-number">1.5.1.</span> <span class="nav-text">运算符重载（Operator Overloading）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#友元函数"><span class="nav-number">1.6.</span> <span class="nav-text">友元函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-继承"><span class="nav-number">1.7.</span> <span class="nav-text">C++继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fas fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hao_Perfect</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">15k</span>
+  
+<br><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="noopener">粤ICP备20002606号</a></br>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RimRr5VG6bq6spNYoGiIk77m-gzGzoHsz", "HPIwi7XkIgeMsqC2XgeGcMbo");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
