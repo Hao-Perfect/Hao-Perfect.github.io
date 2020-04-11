@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Hao-Perfect's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="概述uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;QQ&#x2F;钉钉）等多个平台。 简单说uni-app一套代码适用于多个平台。 uni-app在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。 由于具备多方优势，笔者为此选">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uni-app学习">
+<meta property="og:url" content="http://hao-perfect.github.io/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hao-Perfect&#39;s Blog">
+<meta property="og:description" content="概述uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;QQ&#x2F;钉钉）等多个平台。 简单说uni-app一套代码适用于多个平台。 uni-app在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。 由于具备多方优势，笔者为此选">
+<meta property="article:published_time" content="2020-04-06T12:13:38.407Z">
+<meta property="article:modified_time" content="2020-04-06T14:05:11.088Z">
+<meta property="article:author" content="Hao_Perfect">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://Hao-Perfect.github.io/2020/04/06/uni-app学习/"/>
+
+
+
+
+
+  <title>uni-app学习 | Hao-Perfect's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?643981913ae298999b81b57951f0d16f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/Hao-Perfect" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hao-Perfect's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">欢迎来到小豪的空间</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hao_Perfect
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hao-perfect.github.io/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/" title="uni-app学习">http://hao-perfect.github.io/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+    </br />
+    </br />
+    
+    <link itemprop="mainEntityOfPage" href="http://Hao-Perfect.github.io/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hao_Perfect">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hao-Perfect's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">uni-app学习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T20:13:38+08:00">
+                2020-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/" class="leancloud_visitors" data-flag-title="uni-app学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span><span>℃</span>
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.1k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><code>uni-app</code> 是一个使用 <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue.js</a> 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉）等多个平台。</p>
+<p>简单说<code>uni-app</code>一套代码适用于多个平台。</p>
+<p><code>uni-app</code>在开发者数量、案例、跨端抹平度、扩展灵活性、性能体验、周边生态、学习成本、开发成本等8大关键指标上拥有更强的优势。</p>
+<p>由于具备多方优势，笔者为此选择学习一下<code>uni-app</code>，方便后续自己开发app或者小程序的需求。</p>
+<h2 id="html、vue、小程序的区别"><a href="#html、vue、小程序的区别" class="headerlink" title="html、vue、小程序的区别"></a>html、vue、小程序的区别</h2><p>传统的h5只有1端，即浏览器。而uni-app可跨7端，虽仍属前端，与传统h5有不同。</p>
+<h3 id="网络模型的变化"><a href="#网络模型的变化" class="headerlink" title="网络模型的变化"></a>网络模型的变化</h3><p>以前网页大多是b/s，服务端代码混合在页面里；</p>
+<p>现在是c/s，前后端分离，通过js api(类似ajax的uni.request)获取json数据，把数据绑定在界面上渲染。</p>
+<h3 id="文件类型变化"><a href="#文件类型变化" class="headerlink" title="文件类型变化"></a>文件类型变化</h3><p>以前是.html文件，现在是.vue文件</p>
+<h3 id="文件内代码架构的变化"><a href="#文件内代码架构的变化" class="headerlink" title="文件内代码架构的变化"></a>文件内代码架构的变化</h3><p>以前一个html大节点，里面有script和style节点；</p>
+<p>现在template是一级节点，用于写tag组件，script和style是并列的一级节点，也就是有3个一级节点。</p>
+<p>以前</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span> /&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>现在，叫<a href="https://cn.vuejs.org/v2/guide/single-file-components.html" target="_blank" rel="noopener">vue单文件组件规范sfc</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>  </span><br><span class="line">    注意必须有一个view，且只能有一个根view。所有内容写在这个view下面。  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span></span><br><span class="line"></span><br><span class="line">    &#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="外部文件引用方式变化"><a href="#外部文件引用方式变化" class="headerlink" title="外部文件引用方式变化"></a>外部文件引用方式变化</h3><p>以前通过script src、link href 引入外部的 js 和 css ；</p>
+<p>现在是es6的写法，import引入外部的js模块(注意不是文件)或css。</p>
+<p>以前</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-1.10.2.js"</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>现在</p>
+<h4 id="js-要-require-进来，变成了对象。"><a href="#js-要-require-进来，变成了对象。" class="headerlink" title="js 要 require 进来，变成了对象。"></a>js 要 require 进来，变成了对象。</h4><p>在hello uni-app的common目录有一个工具类<code>util.js</code>，可以在hello uni-app中搜索这个例子查看。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="javascript"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'../../../common/util.js'</span>);  <span class="comment">//require这个js模块  </span></span></span><br><span class="line"><span class="actionscript"><span class="keyword">var</span> formatedPlayTime = util.formatTime(playTime); <span class="comment">//调用js模块的方法  </span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>而在这个<code>util.js</code>里，要把之前的function封装为对象的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatTime</span>(<span class="params">time</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> time;<span class="comment">//这里没写逻辑  </span></span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;  </span><br><span class="line">    formatTime: formatTime  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然还有一些高级的用法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dateUtils = <span class="built_in">require</span>(<span class="string">'../../../common/util.js'</span>).dateUtils; <span class="comment">//直接使用js模块的属性。在hello uni-app有示例  </span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> echarts <span class="keyword">from</span> <span class="string">'/components/echarts/echarts.simple.min.js'</span>; <span class="comment">//将js导入并重命名为echarts，然后使用echarts.来继续执行方法。在hello uni-app有示例</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="css外部文件导入"><a href="#css外部文件导入" class="headerlink" title="css外部文件导入"></a>css外部文件导入</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span>  </span><br><span class="line"><span class="css">    <span class="keyword">@import</span> <span class="string">"./common/uni.css"</span>;  </span></span><br><span class="line"></span><br><span class="line"><span class="css">    <span class="selector-class">.uni-hello-text</span>&#123;  </span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>:<span class="selector-id">#7A7E83</span>;  </span></span><br><span class="line">    &#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>全局样式，在根目录下的app.vue里写入，每个页面都会加载app.vue里的样式。</p>
+<h4 id="另外，vue-支持组件导入，可以更方便的封装一个包括界面、js、样式的库。"><a href="#另外，vue-支持组件导入，可以更方便的封装一个包括界面、js、样式的库。" class="headerlink" title="另外，vue 支持组件导入，可以更方便的封装一个包括界面、js、样式的库。"></a>另外，vue 支持组件导入，可以更方便的封装一个包括界面、js、样式的库。</h4><p>如下是导入一个角标的组件库，在页面上显示一个 abc 并且右上角有个数字角标1，<a href="http://ext.dcloud.net.cn/plugin?id=21" target="_blank" rel="noopener">详见</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">uni-badge</span> <span class="attr">text</span>=<span class="string">"abc"</span> <span class="attr">:inverted</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">uni-badge</span>&gt;</span><span class="comment">&lt;!--3.使用组件--&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> uniBadge <span class="keyword">from</span> <span class="string">"../../../components/uni-badge.vue"</span>;<span class="comment">//1.导入组件  </span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span></span><br><span class="line">        data() &#123;  </span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;  </span></span><br><span class="line"></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;,  </span><br><span class="line">        components: &#123;  </span><br><span class="line"><span class="actionscript">            uniBadge <span class="comment">//2.注册组件  </span></span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如需要全局导入vue组件，即每个页面都可以直接使用而不用引用和注册的话，在项目根目录下的main.js里处理。如下是hello uni-app里的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.js  </span></span><br><span class="line"><span class="keyword">import</span> pageHead <span class="keyword">from</span> <span class="string">'./components/page-head.vue'</span> <span class="comment">//导入  </span></span><br><span class="line">Vue.component(<span class="string">'page-head'</span>, pageHead) <span class="comment">//注册。注册后在每个vue的page页面里可以直接使用&lt;page-head&gt;&lt;/page-head&gt;组件。</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="组件-标签的变化"><a href="#组件-标签的变化" class="headerlink" title="组件/标签的变化"></a>组件/标签的变化</h3><p>以前是html标签，现在是小程序组件。<br>具体说来：</p>
+<ul>
+<li>div 改成 <a href="https://uniapp.dcloud.io/component/view" target="_blank" rel="noopener">view</a></li>
+<li>span、font 改成 <a href="https://uniapp.dcloud.io/component/text" target="_blank" rel="noopener">text</a></li>
+<li>a 改成 <a href="https://uniapp.dcloud.io/component/navigator" target="_blank" rel="noopener">navigator</a></li>
+<li>img 改成 <a href="https://uniapp.dcloud.io/component/image" target="_blank" rel="noopener">image</a></li>
+<li><a href="https://uniapp.dcloud.io/component/input" target="_blank" rel="noopener">input</a> 还在，但type属性改成了confirmtype</li>
+<li><a href="https://uniapp.dcloud.io/component/form" target="_blank" rel="noopener">form</a>、<a href="https://uniapp.dcloud.io/component/button" target="_blank" rel="noopener">button</a>、<a href="https://uniapp.dcloud.io/component/checkbox" target="_blank" rel="noopener">checkbox</a>、<a href="https://uniapp.dcloud.io/component/radio" target="_blank" rel="noopener">radio</a>、<a href="https://uniapp.dcloud.io/component/label" target="_blank" rel="noopener">label</a>、<a href="https://uniapp.dcloud.io/component/textarea" target="_blank" rel="noopener">textarea</a>、<a href="https://uniapp.dcloud.io/component/canvas" target="_blank" rel="noopener">canvas</a>、<a href="https://uniapp.dcloud.io/component/video" target="_blank" rel="noopener">video</a> 这些还在。</li>
+<li>select 改成 <a href="https://uniapp.dcloud.io/component/picker" target="_blank" rel="noopener">picker</a></li>
+<li>iframe 改成 <a href="https://uniapp.dcloud.io/component/web-view" target="_blank" rel="noopener">web-view</a></li>
+<li>ul、li没有了，都用view替代</li>
+<li>audio 不再推荐使用，改成api方式，<a href="https://uniapp.dcloud.io/api/media/background-audio-manager?id=getbackgroundaudiomanager" target="_blank" rel="noopener">背景音频api文档</a><br>  其实老的HTML标签也可以在uni-app里使用，uni-app编译器会在编译时把老标签转为新标签，比如把div编译成view。但不推荐这种用法，调试H5端时容易混乱。</li>
+</ul>
+<p><strong>除了改动外，新增了一批手机端常用的新组件</strong></p>
+<ul>
+<li><p>scroll-view <a href="https://uniapp.dcloud.io/component/scroll-view" target="_blank" rel="noopener">可区域滚动视图容器</a></p>
+</li>
+<li><p>swiper <a href="https://uniapp.dcloud.io/component/swiper" target="_blank" rel="noopener">可滑动区域视图容器</a></p>
+</li>
+<li><p>icon <a href="https://uniapp.dcloud.io/component/icon" target="_blank" rel="noopener">图标</a></p>
+</li>
+<li><p>rich-text <a href="https://uniapp.dcloud.io/component/rich-text" target="_blank" rel="noopener">富文本（不可执行js，但可渲染各种文字格式和图片）</a></p>
+</li>
+<li><p>progress <a href="https://uniapp.dcloud.io/component/progress" target="_blank" rel="noopener">进度条</a></p>
+</li>
+<li><p>slider <a href="https://uniapp.dcloud.io/component/slider" target="_blank" rel="noopener">滑块指示器</a></p>
+</li>
+<li><p>switch <a href="https://uniapp.dcloud.io/component/switch" target="_blank" rel="noopener">开关选择器</a></p>
+</li>
+<li><p>camera <a href="https://uniapp.dcloud.io/component/camera" target="_blank" rel="noopener">相机</a></p>
+</li>
+<li><p>live-player <a href="https://uniapp.dcloud.io/component/live-player" target="_blank" rel="noopener">直播</a></p>
+</li>
+<li><p>map <a href="https://uniapp.dcloud.io/component/map" target="_blank" rel="noopener">地图</a></p>
+</li>
+<li><p>cover-view <a href="https://uniapp.dcloud.io/component/cover-view?id=cover-view" target="_blank" rel="noopener">可覆盖原生组件的视图容器</a> </p>
+<p>  cover-view需要多强调几句，uni-app的非h5端的video、map、canvas、textarea是原生组件，层级高于其他组件。如需覆盖原生组件，比如在map上加个遮罩，则需要使用cover-view组件</p>
+</li>
+</ul>
+<p>除了内置组件，还有很多开源的扩展组件，把常用操作都进行封装，DCloud建立了插件市场收录这些扩展组件，详见<a href="https://ext.dcloud.net.cn/" target="_blank" rel="noopener">插件市场</a></p>
+<h3 id="js的变化"><a href="#js的变化" class="headerlink" title="js的变化"></a>js的变化</h3><p>js的变化，分为 运行环境变化、数据绑定模式变化、api变化3部分。</p>
+<ul>
+<li><strong>运行环境从浏览器变成v8引擎</strong></li>
+</ul>
+<p>标准js语法和api都支持，比如if、for、settimeout、indexOf等。</p>
+<p>但浏览器专用的window、document、navigator、location对象，包括cookie等存储，只有在浏览器中才有，app和小程序都不支持。</p>
+<p>可能有些人以为js等于浏览器里的js。其实js是ECMAScript组织管理的，浏览器中的js是w3c组织基于js规范补充了window、document、navigator、location等专用对象。</p>
+<p>在uni-app的各个端中，除了h5端，其他端的js都运行在一个独立的v8引擎下，不是在浏览器中，所以浏览器的对象无法使用。如果你做过小程序开发，对此应当很了解。</p>
+<p>这意味着依赖document的很多HTML的库，比如jqurey无法使用。</p>
+<p>当然app和小程序支持web-view组件，里面可以加载标准HTML，这种页面仍然支持浏览器专用对象window、document、navigator、location。</p>
+<ul>
+<li><strong>以前的dom操作，改成vue的MVVM模式</strong></li>
+</ul>
+<p>现在前端趋势是去dom化，改用mvvm模式，更简洁的写法，大幅减少代码行数，同时差量渲染性能更好。</p>
+<p>uni-app使用vue的数据绑定方式解决js和dom界面交互的问题。</p>
+<p>如果你想改变某个dom元素的显示内容，比如一个view的显示文字：</p>
+<p>以前是给view设id，然后js里通过选择器获取dom元素，进一步通过js进行赋值操作，修改dom元素的属性或值。</p>
+<p>如下演示了一段代码，页面中有个显示的文字区和一个按钮，点击按钮后会修改文字区的值</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span>  </span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.getElementById(<span class="string">"spana"</span>).innerText=<span class="string">"456"</span>  </span></span><br><span class="line">            &#125;)  </span><br><span class="line"><span class="actionscript">            <span class="function"><span class="keyword">function</span> <span class="title">changetextvalue</span> <span class="params">()</span> </span>&#123;  </span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.getElementById(<span class="string">"spana"</span>).innerText=<span class="string">"789"</span>  </span></span><br><span class="line">            &#125;  </span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"spana"</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"changetextvalue()"</span>&gt;</span>修改为789<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>现在的做法，是vue的绑定模式，给这个dom元素绑定一个js变量，在script中修改js变量的值，dom会自动变化，页面会自动更新渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span>&gt;</span>&#123;&#123;textvalue&#125;&#125;<span class="tag">&lt;/<span class="name">text</span>&gt;</span><span class="comment">&lt;!-- 这里演示了组件值的绑定 --&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">:type</span>=<span class="string">"buttontype"</span> @<span class="attr">click</span>=<span class="string">"changetextvalue()"</span>&gt;</span>修改为789<span class="tag">&lt;/<span class="name">button</span>&gt;</span><span class="comment">&lt;!-- 这里演示了属性和事件的绑定 --&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;  </span></span><br><span class="line">        data() &#123;  </span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;  </span></span><br><span class="line"><span class="actionscript">                textvalue:<span class="string">"123"</span>,  </span></span><br><span class="line"><span class="actionscript">                buttontype:<span class="string">"primary"</span>  </span></span><br><span class="line">            &#125;;  </span><br><span class="line">        &#125;,  </span><br><span class="line">        onLoad() &#123;  </span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.textvalue=<span class="string">"456"</span><span class="comment">//这里修改textvalue的值，其实123都来不及显示就变成了456  </span></span></span><br><span class="line">        &#125;,  </span><br><span class="line">        methods: &#123;  </span><br><span class="line">            changetextvalue() &#123;  </span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.textvalue=<span class="string">"789"</span><span class="comment">//这里修改textvalue的值，页面自动刷新为789  </span></span></span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你学过小程序的数据绑定，但不了解vue，要注意：</p>
+<ul>
+<li>小程序的数据绑定参考了vue，但自己修改了一些。在uni-app中只支持标准的vue，不支持小程序的数据绑定语法</li>
+<li>小程序里的setData在uni-app里并不存在，因为vue是自动双向数据绑定的。直接通过赋值方式修改数据，如果数据绑定到界面上，界面会自动更新渲染</li>
+<li><strong>js api的变化</strong></li>
+</ul>
+<p>因为uni-app的api是参考小程序的，所以和浏览器的js api有很多不同，如</p>
+<ol>
+<li>alert,confirm 改成 <a href="https://uniapp.dcloud.io/api/ui/prompt?id=showmodal" target="_blank" rel="noopener">uni.showmodel</a></li>
+<li>ajax 改成 <a href="https://uniapp.dcloud.io/api/request/request" target="_blank" rel="noopener">uni.request</a></li>
+<li>cookie、session 没有了，local.storage 改成 <a href="https://uniapp.dcloud.io/api/storage/storage?id=setstorage" target="_blank" rel="noopener">uni.storage</a></li>
+</ol>
+<p>uni-app的js api还有很多，但基本就是小程序的api，把wx.xxx改为uni.xxx即可。<a href="https://uniapp.dcloud.io/api/README" target="_blank" rel="noopener">详见</a></p>
+<p>uni-app在不同的端，支持条件编译，无限制的使用各端独有的api，<a href="https://uniapp.dcloud.io/platform" target="_blank" rel="noopener">详见条件编译</a></p>
+<h3 id="css的变化"><a href="#css的变化" class="headerlink" title="css的变化"></a>css的变化</h3><p>标准的css基本都是支持的。</p>
+<p>选择器有2个变化：*选择器不支持；元素选择器里没有body，改为了page。微信小程序即是如此。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">page</span>&#123;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>单位方面，px无法动态适应不同宽度的屏幕，rem无法用于nvue/weex。如果想使用根据屏幕宽度自适应的单位，推荐使用 rpx，全端支持。 <a href="https://uniapp.dcloud.io/frame?id=尺寸单位" target="_blank" rel="noopener">尺寸单位文档</a></p>
+<p>uni-app推荐使用flex布局，并默认就是flex布局，这个布局思路和传统流式布局有点区别。但flex的有趣在于，不管是什么技术都支持这种排版，web、小程序/快应用、weex/rn、原生的iOS、Android开发，全都支持flex。它是通吃所有端的新一代布局方案。相关教程请自行百度学习。</p>
+<p>uni-app的vue文件里支持所有web排版方式，不管是流式还是flex。但nvue里，只支持flex，因为它在app端是使用原生排版引擎渲染的。</p>
+<p>注意背景图和字体文件尽量不要大于40k。会影响性能。如果非要大于40k，需放到服务器侧远程引用或base64后引入，不能放到本地作为独立文件引用。在小程序里，其实小于40k的文件在css里也无法引用，uni-app编译器在编译时自动做了处理，把小于40k的文件编译为base64方式了。</p>
+<h3 id="工程结构和页面管理"><a href="#工程结构和页面管理" class="headerlink" title="工程结构和页面管理"></a>工程结构和页面管理</h3><p>uni-app的工程结构有单独的要求，<a href="https://uniapp.dcloud.io/frame?id=目录结构" target="_blank" rel="noopener">详见</a></p>
+<p>每个可显示的页面，都必须在 <a href="https://uniapp.dcloud.io/collocation/pages" target="_blank" rel="noopener">pages.json</a> 中注册。如果你开发过小程序，那么pages.json类似app.json。如果你熟悉vue，这里没有vue的路由，都是在pages.json里管理。</p>
+<p>原来工程的首页一般是index.html或default.html，是在web server里配的。而uni-app的首页，是在pages.json里配的，page节点下第一个页面就是首页。一般在/pages/xx的目录下。</p>
+<p>app和小程序中，为了提升体验，页面提供了原生的导航栏和底部tabbar，注意这些配置是在pages.json中做，而不是在vue页面里创建，但点击事件的监听在显示的vue页面中做。</p>
+<p>在vue中，以前的 js<code>事件监听</code>概念改为了<code>生命周期</code>概念。详见<a href="https://uniapp.dcloud.io/frame?id=生命周期" target="_blank" rel="noopener">uni-app生命周期</a></p>
+<p>如果你熟悉小程序开发的话，对比变化如下：</p>
+<ul>
+<li>原来app.json被一拆为二。页面管理，被挪入了uni-app的pages.json；非页面管理，挪入了manifest.json</li>
+<li>原来的app.js和app.wxss被合并到了app.vue中</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>以上并非uni-app的完整教程，了解掌握uni-app，还需要认真过一遍uni-app的文档。</p>
+<p>掌握好vue，也仍需要进一步去vue官网学习。或通过<a href="https://ke.qq.com/course/379043?from=800006421" target="_blank" rel="noopener">uni-app专业视频培训课程</a>，连同vue带uni-app一起学会。</p>
+<p>根据腾讯课堂和职友集的数据，会vue的人，比不会vue的普通前端薪资高27%哦。</p>
+<p>如果你熟悉小程序，但不熟悉vue的话，这里还有一篇文章总结的很好：<a href="https://segmentfault.com/a/1190000015684864" target="_blank" rel="noopener">vue和微信小程序的区别、比较</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/WeChat Pay.jpg" alt="Hao_Perfect 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://haoperfect.oss-cn-beijing.aliyuncs.com/Myblog/Alipay.jpg" alt="Hao_Perfect 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Hao_Perfect
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://hao-perfect.github.io/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/" title="uni-app学习">http://hao-perfect.github.io/2020/04/06/uni-app%E5%AD%A6%E4%B9%A0/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/25/C++%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="C++复习笔记（一）">
+                <i class="fa fa-chevron-left"></i> C++复习笔记（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/04/12/Mysql%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev" title="Mysql学习记录">
+                Mysql学习记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/Photo.jpg"
+                alt="Hao_Perfect" />
+            
+              <p class="site-author-name" itemprop="name">Hao_Perfect</p>
+              <p class="site-description motion-element" itemprop="description">记录美好的学习生活</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Hao-Perfect" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="//music.163.com/outchain/player?type=2&id=167870&auto=1&height=66"></iframe>
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html、vue、小程序的区别"><span class="nav-number">1.1.</span> <span class="nav-text">html、vue、小程序的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络模型的变化"><span class="nav-number">1.1.1.</span> <span class="nav-text">网络模型的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件类型变化"><span class="nav-number">1.1.2.</span> <span class="nav-text">文件类型变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件内代码架构的变化"><span class="nav-number">1.1.3.</span> <span class="nav-text">文件内代码架构的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部文件引用方式变化"><span class="nav-number">1.1.4.</span> <span class="nav-text">外部文件引用方式变化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js-要-require-进来，变成了对象。"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">js 要 require 进来，变成了对象。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css外部文件导入"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">css外部文件导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#另外，vue-支持组件导入，可以更方便的封装一个包括界面、js、样式的库。"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">另外，vue 支持组件导入，可以更方便的封装一个包括界面、js、样式的库。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件-标签的变化"><span class="nav-number">1.1.5.</span> <span class="nav-text">组件&#x2F;标签的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#js的变化"><span class="nav-number">1.1.6.</span> <span class="nav-text">js的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css的变化"><span class="nav-number">1.1.7.</span> <span class="nav-text">css的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工程结构和页面管理"><span class="nav-number">1.1.8.</span> <span class="nav-text">工程结构和页面管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.9.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fas fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hao_Perfect</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">22k</span>
+  
+<br><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="noopener">粤ICP备20002606号</a></br>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <!--<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RimRr5VG6bq6spNYoGiIk77m-gzGzoHsz", "HPIwi7XkIgeMsqC2XgeGcMbo");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
