@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mysql学习记录</title>
-    <url>/2020/04/12/Mysql%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
+    <title>MySQL学习记录</title>
+    <url>/2020/04/12/MySQL%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h1 id="学习记录"><a href="#学习记录" class="headerlink" title="学习记录"></a>学习记录</h1><p>use xx; 进入某个数据库</p>
 <p>select database();  查看当前所在的数据库</p>
 <p>select version; 查看版本</p>
@@ -151,6 +151,12 @@
 <p>或者    </p>
 <p>mysql&gt; set password=password(“youpassword”);</p>
 ]]></content>
+      <categories>
+        <category>MySql</category>
+      </categories>
+      <tags>
+        <tag>MySql</tag>
+      </tags>
   </entry>
   <entry>
     <title>uni-app学习</title>
